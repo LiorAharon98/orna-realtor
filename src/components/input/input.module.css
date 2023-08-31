@@ -1,12 +1,19 @@
-#input_container{
-display: flex;
-align-items: center;
-justify-content: space-around;
-width: 210px;
+#input_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 210px;
 }
-#input{
-    text-align: right;
-    outline: none;
-    width: 100px;
-    height: 25px;
+#input {
+  text-align: right;
+  outline: none;
+  width: 100px;
+  height: 25px;
+  border: none;
+  border-bottom: 1.5px solid rgb(0, 115, 255);
+  color: rgb(0, 115, 255);
+  font-size: 15px;
+}
+.text {
+  font-weight: bolder;
 }

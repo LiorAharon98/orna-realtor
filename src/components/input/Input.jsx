@@ -5,7 +5,7 @@ const Input = ({ name,type }) => {
   return (
     <>
       <div id={styles.input_container}>
-        <p>  {name} : </p>
+        <p className={styles.text}>{name} :</p>
         <input type={type} id={styles.input} />
       </div>
       {error && <p>error</p>}
