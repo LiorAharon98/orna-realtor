@@ -1,0 +1,13 @@
+#input_container{
+display: flex;
+align-items: center;
+flex-direction: row-reverse;
+justify-content: space-around;
+width: 200px;
+}
+#input{
+    text-align: right;
+    outline: none;
+    width: 100px;
+    height: 25px;
+}

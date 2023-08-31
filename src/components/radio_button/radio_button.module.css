@@ -1,0 +1,13 @@
+#container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 600px;
+}
+.radio_button{
+    width: 100px;
+}
+.radio{
+    margin: 5px;
+}

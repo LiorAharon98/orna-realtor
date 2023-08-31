@@ -1,0 +1,15 @@
+#container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 200px;
+  justify-content: space-between;
+}
+#select_container {
+  width: 55px;
+  height: 25px;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  border-radius: 10px;
+}
