@@ -1,9 +1,9 @@
 #container{
     display: flex;
     justify-content: space-around;
-    flex-direction: row-reverse;
     flex-wrap: wrap;
     width: 600px;
+    border-bottom: 1px solid black;
 }
 .radio_button{
     width: 100px;

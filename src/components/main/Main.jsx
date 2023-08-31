@@ -16,20 +16,21 @@ const Main = () => {
       <Header />
       <div className={styles.input_container}>
 
-      <Input name={"ביקור בנכס"} type={"date"} />
       <RadioButton name={"השכרה או מכירה"} data={sellOrRent} />
+      <Input name={"ביקור בנכס"} type={"date"} />
       </div>
       <RadioButton name={"סוג הנכס"} data={typeEstate} />
       <RadioButton name={"מצב הנכס"} data={estateStatus} />
       <div className={styles.input_container}>
-        <Input name={"רחוב"} />
-        <Input name={"שכונה"} />
+
         <Input name={"יישוב"} />
+        <Input name={"שכונה"} />
+        <Input name={"רחוב"} />
       </div>
 
       <div className={styles.input_container}>
-        <Select name={"חדרים"} maxNumber={10} />
         <Input type={"number"} name={`מ"ר`}/>
+        <Select name={"חדרים"} maxNumber={10} room={true} />
       </div>
       <div className={styles.input_container}>
         <Select name={"מתוך"} maxNumber={20} />
@@ -48,7 +49,7 @@ const Main = () => {
         <Select name={"אמבטיה"} maxNumber={4} />
       </div>
       <div className={styles.input_container}>
-        <Select name={" מקלחון/אמבטיה"} maxNumber={3} />
+        <Select name={"מקלחון"} maxNumber={2} />
         <Select name={`ממ"ד`} maxNumber={2} />
       </div>
       <div className={styles.input_container}>
@@ -56,9 +57,9 @@ const Main = () => {
       </div>
       <RadioButton name={"מזגנים"} data={airConditioner} />
       <RadioButton name={'כיווני אוויר'} data = {airDirection}/>
-      <Input name={"תאריך כניסה"} type={"date"} />
 
-      <RadioButton  data={extended} />
+      <RadioButton name={'תוספות'} data={extended} />
+      <Input name={"תאריך כניסה"} type={"date"} />
       <div className={styles.input_container}>
         <Input name={"ארנונה"} type={"number"} />
         <Input name={"וועד"} type={"number"} />
