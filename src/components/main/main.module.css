@@ -12,7 +12,21 @@
     width: 120px;
     height: 30px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     background: linear-gradient(to right , rgb(0, 76, 255),rgb(120, 197, 252));
+}
+#page_container{
+    display: flex;
+    justify-content: space-between;
+}
+.side_bar{
+    background: linear-gradient(to bottom , rgb(0, 76, 255),rgb(120, 197, 252));
+width: 40px;
+}
+.side_bar_top{
+    background: linear-gradient(to right , rgb(0, 76, 255),rgb(120, 197, 252));
+    height: 40px;
+    width: 100%;
+
 }

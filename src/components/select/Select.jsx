@@ -7,10 +7,9 @@ const Select = ({ name, maxNumber,room }) => {
     rooms.push(i)
     rooms.push(i+0.5)
   }
-  console.log(rooms)
   return (
     <div id={styles.container}>
-      <p> {name} : </p>
+      <p id={styles.text}> {name} : </p>
       <select id={styles.select_container}>
         <option>0</option>
         {!room && numbers.map((number,index) => {
