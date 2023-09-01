@@ -6,7 +6,7 @@ const Input = ({ name, type, width }) => {
     <>
       <div id={styles.input_container}>
         <p className={styles.text}>{name} :</p>
-        <input style={{ width: width ? width : null }} type={type} id={styles.input} />
+        <input   style={{ width: width ? width : null }} type={type} id={styles.input} />
       </div>
       {error && <p>error</p>}
     </>

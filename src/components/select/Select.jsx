@@ -9,9 +9,9 @@ const Select = ({ name, maxNumber, room }) => {
   }
   return (
     <div id={styles.container}>
-      <p id={styles.text}>{name}:</p>
+      <p id={styles.text}>{name} : </p>
       <select id={styles.select_container}>
-        <option>0</option>
+        <option></option>
         {!room &&
           numbers.map((number, index) => {
             return <option key={index}>{index + 1}</option>;

@@ -1,15 +1,3 @@
-.radio_button_active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 65px;
-  height: 55px;
-  border-radius: 5px;
-  margin: 5px;
-  color: white;
-  background: linear-gradient(to bottom, rgb(0, 66, 248), rgb(83, 181, 250));
-  transition: 500ms;
-}
 .radio_button_inactive {
   display: flex;
   align-items: center;
@@ -18,4 +6,16 @@
   height: 60px;
   border-radius: 5px;
   margin: 5px;
+}
+
+.radio_button_active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 55px;
+  border-radius: 5px;
+  color: white;
+  background: linear-gradient(to bottom, rgb(0, 66, 248), rgb(83, 181, 250));
+  transition: 500ms;
 }

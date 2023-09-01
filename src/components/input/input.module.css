@@ -5,12 +5,13 @@
   width: 230px;
 }
 #input {
+  background-color: white;
   text-align: right;
   outline: none;
   width: 100px;
   height: 25px;
   border: none;
-  border-bottom: 1.5px solid rgb(0, 115, 255);
+  border-bottom: 1.5px solid rgb(0, 145, 255);
   color: rgb(0, 115, 255);
   font-size: 15px;
 }

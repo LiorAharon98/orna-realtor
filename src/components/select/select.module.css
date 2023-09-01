@@ -3,15 +3,17 @@
   align-items: center;
   width: 200px;
   justify-content: space-between;
+  background-color: white;
 }
 #select_container {
+  background-color: white;
   width: 55px;
   height: 25px;
   font-size: 16px;
   outline: none;
+  border: none;
   text-align: center;
-  border-radius: 10px;
 }
-#text{
+#text {
   font-weight: bolder;
 }
