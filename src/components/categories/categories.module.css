@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 550px;
-    border-bottom: 1.5px solid  rgb(0, 115, 255);
+    width: 600px;
 }
 

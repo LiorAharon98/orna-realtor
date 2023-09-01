@@ -12,7 +12,10 @@ const Main = () => {
         <div className={styles.side_bar}></div>
         <div id={styles.container}>
           <Header />
-          <Input width={120} name={"ביקור בנכס"} type={"date"} />
+          <div className={styles.input_container}>
+            <Input width={120} name={"ביקור בנכס"} type={"date"} />
+            <Input width={120} name={"תאריך כניסה"} type={"date"} />
+          </div>
           <div className={styles.input_container}>
             <Categories name={"השכרה או מכירה"} data={sellOrRent} />
           </div>
@@ -33,12 +36,12 @@ const Main = () => {
             <Select name={"מתוך"} maxNumber={20} />
           </div>
           <div className={styles.input_container}>
-            <Select name={"מרפסת שירות"} maxNumber={3} />
+            <Select name={"מרפסת שירות"} maxNumber={2} />
             <Select name={"מרפסת שמש"} maxNumber={3} />
           </div>
           <div className={styles.input_container}>
             <Select name={"חנייה"} maxNumber={3} />
-            <Select name={"מחסן"} maxNumber={3} />
+            <Select name={"מחסן"} maxNumber={2} />
           </div>
           <div className={styles.input_container}>
             <Select name={"שירותים"} maxNumber={4} />
@@ -46,23 +49,20 @@ const Main = () => {
           </div>
           <div className={styles.input_container}>
             <Select name={"מקלחון"} maxNumber={2} />
-            <Select name={`ממ"ד`} maxNumber={2} />
-          </div>
-          <div className={styles.input_container}>
             <Select name={"מעלית"} maxNumber={2} />
           </div>
+
           <Categories name={"מזגנים"} data={airConditioner} />
           <Categories name={"ריהוט"} data={furniture} />
           <Categories name={"כיווני אוויר"} data={airDirection} />
 
           <Categories name={"תוספות"} data={extended} />
-          <Input width={120} name={"תאריך כניסה"} type={"date"} />
           <div className={styles.input_container}>
-            <Input name={"ארנונה"} type={"number"} />
-            <Input name={"ועד"} type={"number"} />
+            <Input name={"ארנונה"} type={"number"} width={70} />
+            <Input name={"ועד"} type={"number"} width={70} />
           </div>
           <div className={styles.input_container}>
-            <Input name={"מחיר"} type={"number"} />
+            <Input name={"מחיר"} type={"number"} width={80} />
           </div>
           <button id={styles.btn}>בדיקה</button>
         </div>

@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65px;
-  height: 60px;
-  border-radius: 5px;
+  width: 85px;
+  height: 35px;
+  border-radius: 15px;
   margin: 5px;
 }
 
@@ -12,10 +12,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65px;
-  height: 55px;
-  border-radius: 5px;
+  width: 95px;
+  height: 35px;
+  margin: 5px;
+  border-radius: 15px;
   color: white;
-  background: linear-gradient(to bottom, rgb(0, 66, 248), rgb(83, 181, 250));
+  background: linear-gradient(to bottom, rgb(13, 156, 252), rgb(120, 198, 254));
   transition: 500ms;
 }

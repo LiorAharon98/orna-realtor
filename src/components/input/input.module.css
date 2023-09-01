@@ -11,8 +11,7 @@
   width: 100px;
   height: 25px;
   border: none;
-  border-bottom: 1.5px solid rgb(0, 145, 255);
-  color: rgb(0, 115, 255);
+  border-bottom: 1.5px solid black;
   font-size: 15px;
 }
 .text {
