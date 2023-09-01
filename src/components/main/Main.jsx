@@ -3,7 +3,7 @@ import Input from "../input/Input";
 import Select from "../select/Select";
 import styles from "./main.module.css";
 import Header from "../header/Header";
-import RadioButton from "../radio_button/RadioButton";
+import Categories from "../categories/Categories";
 const Main = () => {
   const sellOrRent = ["השכרה", "מכירה"];
   const airConditioner = ["מיני מרכזי", "בכל חדר", "גם וגם", "VRF", "דמפרים"];
@@ -32,12 +32,12 @@ const Main = () => {
       <div className={styles.side_bar}></div>
       <div id={styles.container}>
         <Header />
+          <Input width={120} name={"ביקור בנכס"} type={"date"} />
         <div className={styles.input_container}>
-          <RadioButton name={"השכרה או מכירה"} data={sellOrRent} />
-          <Input name={"ביקור בנכס"} type={"date"} />
+          <Categories name={"השכרה או מכירה"} data={sellOrRent} />
         </div>
-        <RadioButton name={"סוג הנכס"} data={typeEstate} />
-        <RadioButton name={"מצב הנכס"} data={estateStatus} />
+        <Categories name={"סוג הנכס"} data={typeEstate} />
+        <Categories name={"מצב הנכס"} data={estateStatus} />
         <div className={styles.input_container}>
           <Input name={"יישוב"} />
           <Input name={"שכונה"} />
@@ -71,11 +71,11 @@ const Main = () => {
         <div className={styles.input_container}>
           <Select name={"מעלית"} maxNumber={2} />
         </div>
-        <RadioButton name={"מזגנים"} data={airConditioner} />
-        <RadioButton name={"כיווני אוויר"} data={airDirection} />
+        <Categories name={"מזגנים"} data={airConditioner} />
+        <Categories name={"כיווני אוויר"} data={airDirection} />
 
-        <RadioButton name={"תוספות"} data={extended} />
-        <Input name={"תאריך כניסה"} type={"date"} />
+        <Categories name={"תוספות"} data={extended} />
+        <Input width={120} name={"תאריך כניסה"} type={"date"} />
         <div className={styles.input_container}>
           <Input name={"ארנונה"} type={"number"} />
           <Input name={"ועד"} type={"number"} />

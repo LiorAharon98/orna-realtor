@@ -1,7 +1,13 @@
+#page_container{
+    display: flex;
+    justify-content: space-between;
+}
 #container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    height: 1600px;
 }
 .input_container{
     display: flex;
@@ -15,10 +21,6 @@
     border-radius: 5px;
     color: white;
     background: linear-gradient(to right , rgb(0, 76, 255),rgb(120, 197, 252));
-}
-#page_container{
-    display: flex;
-    justify-content: space-between;
 }
 .side_bar{
     background: linear-gradient(to bottom , rgb(0, 76, 255),rgb(120, 197, 252));
