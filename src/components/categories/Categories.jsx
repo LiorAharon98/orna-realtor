@@ -3,7 +3,6 @@ import Category from "../category/Category";
 import styles from "./categories.module.css";
 const Categories = ({ name, data }) => {
   const [toggle, setToggle] = useState("");
-
   const pressHandler = (value) => {
     setToggle((prev) => (prev = value));
   };

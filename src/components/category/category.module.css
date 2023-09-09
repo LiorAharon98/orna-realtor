@@ -15,8 +15,8 @@
   width: 95px;
   height: 35px;
   margin: 5px;
-  border-radius: 15px;
-  color: white;
-  background: linear-gradient(to bottom, rgb(13, 156, 252), rgb(120, 198, 254));
+  text-decoration: underline;
+  color: rgb(13, 156, 252);
+
   transition: 500ms;
 }

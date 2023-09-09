@@ -5,10 +5,10 @@ import styles from "./main.module.css";
 import Header from "../header/Header";
 import Categories from "../categories/Categories";
 import { airConditioner, airDirection, estateStatus, extended, furniture, sellOrRent, typeEstate } from "../../data";
+import Extended from "../extended/Extended";
 const Main = () => {
   return (
     <>
-      <div id={styles.page_container}>
         <div className={styles.side_bar}></div>
         <div id={styles.container}>
           <Header />
@@ -55,8 +55,7 @@ const Main = () => {
           <Categories name={"מזגנים"} data={airConditioner} />
           <Categories name={"ריהוט"} data={furniture} />
           <Categories name={"כיווני אוויר"} data={airDirection} />
-
-          <Categories name={"תוספות"} data={extended} />
+           <Extended data={extended}/>
           <div className={styles.input_container}>
             <Input name={"ארנונה"} type={"number"} width={70} />
             <Input name={"ועד"} type={"number"} width={70} />
@@ -66,8 +65,6 @@ const Main = () => {
           </div>
           <button id={styles.btn}>בדיקה</button>
         </div>
-        <div className={styles.side_bar}></div>
-      </div>
     </>
   );
 };

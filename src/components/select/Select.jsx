@@ -11,6 +11,7 @@ const Select = ({ name, maxNumber, room }) => {
     <div id={styles.container}>
       <p id={styles.text}>{name} : </p>
       <select  id={styles.select_container}>
+        <option>ללא</option>
         {!room &&
           numbers.map((number, index) => {
             return <option key={index}>{index + 1}</option>;

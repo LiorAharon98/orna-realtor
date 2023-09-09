@@ -1,0 +1,19 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 700px;
+}
+.item_active {
+  font-size: 18px;
+
+  margin: 5px;
+  transition: 500ms;
+  text-decoration: underline;
+  color: rgb(13, 156, 252);
+}
+.item_inactive {
+  transition: 500ms;
+  margin: 5px;
+}
