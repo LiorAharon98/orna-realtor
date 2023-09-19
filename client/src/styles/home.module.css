@@ -33,11 +33,15 @@
 .inp{
   text-align: left;
   outline: none;
-  border-radius: 10px;
-  border: none
+  border-radius: 5px;
+  border: 1.5px solid rgb(0, 102, 255);
+  padding-left: 10px;
+  font-size: 15px;
+  height: 30px;
+
 }
 #btn {
-  width: 120px;
+  width: 140px;
   height: 30px;
   border: none;
   border-radius: 5px;

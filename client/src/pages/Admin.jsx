@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Property from "../components/property/Property";
+import styles from "../styles/admin.module.css";
 const Admin = () => {
   const [allProperty, setAllProperty] = useState([]);
   const getProperty = async () => {
@@ -9,7 +11,16 @@ const Admin = () => {
   useEffect(() => {
     getProperty();
   }, []);
-  return <div></div>;
+  return (
+    <div id={styles.page_container}>
+
+    <div id={styles.container}>
+      {allProperty.map((property, index) => {
+        return <Property {...property} />;
+      })}
+    </div>
+      </div>
+  );
 };
 
 export default Admin;

@@ -1,0 +1,10 @@
+#page_container{
+    display: flex;
+    justify-content: center;
+}
+#container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+}
