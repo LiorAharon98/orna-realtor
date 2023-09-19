@@ -6,7 +6,7 @@ const Home = () => {
   const usernameRef = useRef("");
   const passwordRef = useRef("");
   const handleClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (usernameRef.current.value === "orna" && passwordRef.current.value === "058434812") {
       setToggle(true);
     }
@@ -18,14 +18,14 @@ const Home = () => {
           <input className={styles.inp} ref={usernameRef} placeholder="username" />
           <input className={styles.inp} ref={passwordRef} placeholder="password" />
           <button id={styles.btn} onClick={handleClick}>
-            next
+            התחבר
           </button>
         </form>
       )}
       {toggle && (
         <div id={styles.square_container}>
           <Link to={"/admin"} className={styles.container}>
-            אדמין
+            ניהול
           </Link>
 
           <Link to={"/add-property"} className={styles.container}>

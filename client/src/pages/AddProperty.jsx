@@ -13,8 +13,7 @@ const AddProperty = () => {
     property[key] = e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value;
   };
   const handleClick = async () => {
-    console.log(property)
-    // const response = await axios.post("http://localhost:4000/add-property", property);
+    await axios.post("http://localhost:4000/add-property", property);
     alert("succeed");
   };
   return (
@@ -22,8 +21,9 @@ const AddProperty = () => {
       <div id={styles.container}>
         <Heading />
         <div className={styles.input_container}>
-          <Input name={"visited"} handleChange={handleChange} width={120} hebrewName={"ביקור בנכס"} type={"date"} />
+          <Input name={"visited"} handleChange={handleChange} width={130} hebrewName={"ביקור בנכס"} type={"date"} />
           <Input name={"available"} handleChange={handleChange} width={120} hebrewName={"תאריך כניסה"} type={"date"} />
+          <Input name={"contact"} handleChange={handleChange} hebrewName={"איש קשר"} />
         </div>
         <div className={styles.input_container}>
           <Categories name={"rentOrSell"} handleChange={handleChange} hebrewName={"השכרה או מכירה"} data={sellOrRent} />
@@ -69,7 +69,7 @@ const AddProperty = () => {
           hebrewName={"כיווני אוויר"}
           data={airDirection}
         />
-        <Extended handleChange={handleChange} name={'extended'}  data={extended} />
+        <Extended handleChange={handleChange} name={"extended"} data={extended} />
         <div className={styles.input_container}>
           <Input name={"propertyTax"} handleChange={handleChange} hebrewName={"ארנונה"} type={"number"} width={70} />
           <Input name={"committee"} handleChange={handleChange} hebrewName={"ועד"} type={"number"} width={70} />

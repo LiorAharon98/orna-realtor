@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   visited: Date,
   available: Date,
+  contact : String,
   rentOrSell: String,
   type: String,
   condition: String,
