@@ -5,7 +5,7 @@ import styles from "../styles/admin.module.css";
 const Admin = () => {
   const [allProperty, setAllProperty] = useState([]);
   const getProperty = async () => {
-    const response = await axios.get("http://localhost:4000/admin");
+    const response = await axios.get("https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/admin");
     setAllProperty(response.data);
   };
   useEffect(() => {
@@ -13,13 +13,12 @@ const Admin = () => {
   }, []);
   return (
     <div id={styles.page_container}>
-
-    <div id={styles.container}>
-      {allProperty.map((property, index) => {
-        return <Property {...property} />;
-      })}
-    </div>
+      <div id={styles.container}>
+        {allProperty.map((property, index) => {
+          return <Property key={index} {...property} />;
+        })}
       </div>
+    </div>
   );
 };
 

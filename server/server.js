@@ -8,4 +8,4 @@ mongoose.connect(
   "mongodb+srv://liors-database:lior.ah980@cluster0.iybrzvm.mongodb.net/orna_realtor?retryWrites=true&w=majority"
 );
 app.use("/", userRoute);
-app.listen(4000);
+app.listen(process.env.PORT || 4000);

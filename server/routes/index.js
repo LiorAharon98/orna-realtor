@@ -6,6 +6,6 @@ router.get("/admin", async (req, res) => {
 });
 router.post("/add-property", async (req, res) => {
   await UserModel.create(req.body);
-  res.json("yes");
+  res.json(true);
 });
 module.exports = router;

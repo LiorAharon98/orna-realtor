@@ -3,18 +3,20 @@ import Input from "../components/input/Input";
 import Select from "../components/select/Select";
 import styles from "../styles/add_property.module.css";
 import Heading from "../components/heading/Heading";
+import { useNavigate } from "react-router-dom";
 import Categories from "../components/categories/Categories";
 import { airConditioner, airDirection, estateStatus, extended, furniture, sellOrRent, typeEstate } from "../data";
 import Extended from "../components/extended/Extended";
 import axios from "axios";
 const AddProperty = () => {
   const property = {};
+  const navigate = useNavigate()
   const handleChange = (key, e) => {
     property[key] = e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value;
   };
   const handleClick = async () => {
-    await axios.post("http://localhost:4000/add-property", property);
-    alert("succeed");
+    await axios.post("https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property", property);
+    navigate('/')
   };
   return (
     <>
