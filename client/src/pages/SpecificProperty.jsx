@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import { useLocation } from "react-router-dom";
 const SpecificProperty = () => {
-  return (
-    <div></div>
-  )
-}
+  const location = useLocation();
+  const { state } = location;
+  return <div></div>;
+};
 
-export default SpecificProperty
+export default SpecificProperty;

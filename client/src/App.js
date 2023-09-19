@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/add-property" element={<AddProperty />}></Route>
           <Route path="/admin" element={<Admin />}></Route>
-          <Route path="/property" element={<SpecificProperty />}></Route>
+          <Route path="/specific-property" element={<SpecificProperty />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
