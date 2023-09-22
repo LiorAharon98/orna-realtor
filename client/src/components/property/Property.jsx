@@ -6,11 +6,13 @@ const Property = (props) => {
   const handleClick = () => {
     navigate("/specific-property", { state: props });
   };
+  const {contact,city,street,streetNumber} = props
   return (
     <div onClick={handleClick} id={styles.container}>
-      <h4 className={styles.text}>{props.contact}</h4>
-      <h4 className={styles.text}>{props.city}</h4>
-      <h4 className={styles.text}>{props.street}</h4>
+      <h4 className={styles.text}>{contact}</h4>
+      <h4 className={styles.text}>{city}</h4>
+      <h4 className={styles.text}>{street}</h4>
+      <h4 className={styles.text}>{streetNumber}</h4>
     </div>
   );
 };
