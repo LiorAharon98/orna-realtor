@@ -10,13 +10,13 @@ import Extended from "../components/extended/Extended";
 import axios from "axios";
 const AddProperty = () => {
   const property = {};
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleChange = (key, e) => {
     property[key] = e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value;
   };
   const handleClick = async () => {
     await axios.post("https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property", property);
-    navigate('/')
+    navigate("/");
   };
   return (
     <>
@@ -36,6 +36,7 @@ const AddProperty = () => {
           <Input name={"city"} handleChange={handleChange} hebrewName={"יישוב"} />
           <Input name={"neighborhood"} handleChange={handleChange} hebrewName={"שכונה"} />
           <Input name={"street"} handleChange={handleChange} hebrewName={"רחוב"} />
+          <Input name={"streetNumber"} handleChange={handleChange} width={30} hebrewName={"מספר"} type={"number"} />
         </div>
 
         <div className={styles.input_container}>
