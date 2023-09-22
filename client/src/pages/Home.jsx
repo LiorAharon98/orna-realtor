@@ -28,14 +28,17 @@ const Home = () => {
           </form>
         )}
         {toggle && (
-          <div id={styles.square_container}>
-            <Link to={"/admin"} className={styles.container}>
-              ניהול
-            </Link>
-
-            <Link to={"/add-property"} className={styles.container}>
-              הוספה
-            </Link>
+          <div id={styles.right_container2}>
+            <div id={styles.square_container}>
+              <Link to={"/admin"} className={styles.link_container}>
+                ניהול
+              </Link>
+            </div>
+            <div id={styles.square_container}>
+              <Link to={"/add-property"} className={styles.link_container}>
+                הוספה
+              </Link>
+            </div>
           </div>
         )}
       </div>
