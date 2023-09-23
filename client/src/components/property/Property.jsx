@@ -11,8 +11,7 @@ const Property = (props) => {
     <div onClick={handleClick} id={styles.container}>
       <h4 className={styles.text}>{contact}</h4>
       <h4 className={styles.text}>{city}</h4>
-      <h4 className={styles.text}>{street}</h4>
-      <h4 className={styles.text}>{streetNumber}</h4>
+      <h4 className={styles.text}>{street} {streetNumber}</h4>
     </div>
   );
 };

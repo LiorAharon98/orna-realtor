@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import styles from "../styles/specific_property.module.css";
+import data from "../hebrewPropertyData"
 const SpecificProperty = () => {
   const location = useLocation();
   const { state } = location;
@@ -8,7 +9,7 @@ const SpecificProperty = () => {
   delete state.__v;
   return (
     <div id={styles.container}>
-      {Object.keys(state).map((value) => {
+      {Object.keys(state).map((value,index) => {
         if (value === "extended") {
           return state[value].map((text) => {
             return (
@@ -21,8 +22,8 @@ const SpecificProperty = () => {
         return (
          
           <div className={styles.text_container}>
-            <h3>{value}</h3>
-            <h3>{value == "available" || value == "visited" ? state[value].substring(0, 10) : state[value]}</h3>
+            <h4>{data[index]} : </h4>
+            <h4>{value == "available" || value == "visited" ? state[value].substring(0, 10) : state[value]}</h4>
           </div>
         );
       })}

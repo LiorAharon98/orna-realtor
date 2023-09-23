@@ -22,6 +22,7 @@ const userSchema = new mongoose.Schema({
   bathtub: String,
   showerStall: String,
   elevator: Number,
+  safeRoom : Number,
   airConditioner: String,
   furniture: String,
   airDirections: String,

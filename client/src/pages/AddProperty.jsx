@@ -41,7 +41,7 @@ const AddProperty = () => {
 
         <div className={styles.input_container}>
           <Input name={"squareMeter"} handleChange={handleChange} type={"number"} hebrewName={`מ"ר`} />
-          <Select name={"rooms"} handleChange={handleChange} hebrewName={"חדרים"} maxNumber={10} room={true} />
+          <Select name={"rooms"} handleChange={handleChange} hebrewName={"חדרים"} maxNumber={11} room={true} />
         </div>
         <div className={styles.input_container}>
           <Select name={"floor"} handleChange={handleChange} hebrewName={"קומה"} maxNumber={20} />
@@ -56,12 +56,15 @@ const AddProperty = () => {
           <Select name={"warehouse"} handleChange={handleChange} hebrewName={"מחסן"} maxNumber={2} />
         </div>
         <div className={styles.input_container}>
-          <Select name={"bathrooms"} handleChange={handleChange} hebrewName={"שירותים"} maxNumber={4} />
-          <Select name={"bathtub"} handleChange={handleChange} hebrewName={`אמבטיה`} maxNumber={4} />
+          <Select name={"safeRoom"} handleChange={handleChange} hebrewName={"ממ'ד"} maxNumber={2} />
+          <Select name={"elevator"} handleChange={handleChange} hebrewName={"מעלית"} maxNumber={2} />
         </div>
         <div className={styles.input_container}>
+          <Select name={"bathtub"} handleChange={handleChange} hebrewName={`אמבטיה`} maxNumber={4} />
           <Select name={"showerStall"} handleChange={handleChange} hebrewName={"מקלחון"} maxNumber={2} />
-          <Select name={"elevator"} handleChange={handleChange} hebrewName={"מעלית"} maxNumber={2} />
+        </div>
+        <div className={styles.input_container}>
+          <Select name={"bathrooms"} handleChange={handleChange} hebrewName={"שירותים"} maxNumber={5} />
         </div>
 
         <Categories name={"airConditioner"} handleChange={handleChange} hebrewName={"מזגנים"} data={airConditioner} />
