@@ -17,19 +17,22 @@ const Extended = ({ handleChange, name, data }) => {
     handleChange(name, e);
   }, [items]);
   return (
-    <div id={styles.container}>
+    <div id={styles.page_container}>
       <p> תוספות : </p>
+      <div id={styles.extended_container}>
+
       {data.map((item, index) => {
         return (
           <div
-            className={items.find((currentItem) => currentItem === item) ? styles.item_active : styles.item_inactive}
-            key={index}
-            onClick={pressHandler.bind(this, item)}
+          className={items.find((currentItem) => currentItem === item) ? styles.item_active : styles.item_inactive}
+          key={index}
+          onClick={pressHandler.bind(this, item)}
           >
             {item}
           </div>
         );
       })}
+      </div>
     </div>
   );
 };
