@@ -40,7 +40,7 @@ const AddProperty = () => {
         </div>
 
         <div className={styles.input_container}>
-          <Input name={"squareMeter"} handleChange={handleChange} type={"number"} hebrewName={`מ"ר`} />
+          <Input name={"squareMeter"} width={45} handleChange={handleChange} type={"number"} hebrewName={`מ"ר`} />
           <Select name={"rooms"} handleChange={handleChange} hebrewName={"חדרים"} maxNumber={11} room={true} />
         </div>
         <div className={styles.input_container}>

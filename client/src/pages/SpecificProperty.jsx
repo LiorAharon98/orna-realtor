@@ -17,27 +17,49 @@ const SpecificProperty = () => {
 
   return (
     <div id={styles.container}>
-      {Object.keys(state).map((value, index) => {
-        if (value === "extended") {
-          return state[value].map((text) => {
+      <div id={styles.left_container}>
+        {Object.keys(state)
+          .slice(0, 16)
+          .map((value, index) => {
             return (
-              <div className={styles.test}>
-                <p> {text} </p>
+              <div className={styles.text_container}>
+                <h4>{data[index]} : </h4>
+                <h4>
+                  {value == "available" || value == "visited"
+                    ? handleReverseDate(state[value].substring(0, 10))
+                    : state[value]}
+                </h4>
               </div>
             );
-          });
-        }
-        return (
-          <div className={styles.text_container}>
-            <h4>{data[index]} : </h4>
-            <h4>
-              {value == "available" || value == "visited"
-                ? handleReverseDate(state[value].substring(0, 10))
-                : state[value]}
-            </h4>
-          </div>
-        );
-      })}
+          })}
+      </div>
+      <div id={styles.right_container}>
+        {Object.keys(state)
+          .splice(16)
+          .map((value, index) => {
+            if (value === "extended") {
+              return state[value].map((text, currentIndex) => {
+                return (
+                  <div className={styles.test}>
+                    {currentIndex === 0 && <h4>תוספות :</h4>}
+
+                    <p> {text} </p>
+                  </div>
+                );
+              });
+            }
+            return (
+              <div className={styles.text_container}>
+                <h4>{data[index+16]} : </h4>
+                <h4>
+                  {value == "available" || value == "visited"
+                    ? handleReverseDate(state[value].substring(0, 10))
+                    : state[value]}
+                </h4>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };
