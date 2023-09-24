@@ -5,6 +5,7 @@
   width: 600px;
 }
 #container {
+  align-items: center;
   display: flex;
   justify-content: space-between;
   width: 600px;
@@ -27,7 +28,6 @@
     display: flex;
     margin: 1px;
     flex-direction: column;
-    /* background-color: gray; */
     justify-content: center;
     flex-wrap: wrap;
     width: 220px;

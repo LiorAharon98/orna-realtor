@@ -1,0 +1,33 @@
+#page_container {
+  background-color: rgba(0, 102, 254, 0.912);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 100px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 18px;
+}
+#icon{
+  font-size: 18px;
+  margin: 10px;
+  animation: spin infinite 2s linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
