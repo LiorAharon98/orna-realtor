@@ -1,9 +1,9 @@
-#container {
+#page_container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  width: 700px;
+  justify-content: center;
+  width: 600px;
 }
 .item_active {
   font-size: 18px;
@@ -17,10 +17,20 @@
   transition: 500ms;
   margin: 5px;
 }
-
+#extended_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 @media screen and (max-width:768px) {
-  #container{
+  #page_container{
     flex-direction: column;
     width: 200px;
+  }
+  #extended_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 230px;
   }
 }

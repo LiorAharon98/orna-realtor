@@ -14,11 +14,15 @@ const Categories = ({ name, handleChange, hebrewName, data }) => {
     setToggle((prev) => (prev = value));
   };
   return (
-    <div id={styles.container}>
-      <p> {hebrewName} : </p>
-      {data.map((item, index) => {
-        return <Category key={index} pressHandler={pressHandler} toggle={toggle} item={item} />;
-      })}
+    <div id={styles.page_container}>
+      <div id={styles.container}>
+        <p> {hebrewName} : </p>
+        <div id={styles.category_container}>
+          {data.map((item, index) => {
+            return <Category key={index} pressHandler={pressHandler} toggle={toggle} item={item} />;
+          })}
+        </div>
+      </div>
     </div>
   );
 };
