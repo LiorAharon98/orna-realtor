@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./input.module.css";
 const Input = ({ hebrewName, type, width, handleChange,name  }) => {
   const [error, setError] = useState("");
+
   return (
     <>
       <div id={styles.input_container}>
