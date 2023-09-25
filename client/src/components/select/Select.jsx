@@ -11,6 +11,7 @@ const Select = ({ handleChange,hebrewName,name, maxNumber, room }) => {
     <div id={styles.container}>
       <p id={styles.text}>{hebrewName} : </p>
       <select onChange={handleChange.bind(this,name)}  id={styles.select_container}>
+        <option></option>
         <option>ללא</option>
         {!room &&
           numbers.map((number, index) => {
