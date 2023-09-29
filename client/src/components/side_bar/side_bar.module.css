@@ -1,0 +1,34 @@
+#page_container_active {
+  position: fixed;
+  top: 30px;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.9;
+  transition: 600ms;
+}
+#page_container_inactive {
+  opacity: 0.3;
+  position: fixed;
+  transition: 600ms;
+  width: 100%;
+  height: 0%;
+}
+#link_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 200px;
+}
+.link {
+  text-decoration: none;
+  color: rgb(0, 76, 255);
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #page_container_active {
+    opacity: 0.95;
+  }
+}

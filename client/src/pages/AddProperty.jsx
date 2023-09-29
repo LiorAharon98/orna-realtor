@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../components/input/Input";
 import Select from "../components/select/Select";
 import styles from "../styles/add_property.module.css";
+import AddPropertyBtn from "../components/add_property_btn/AddPropertyBtn";
 import Heading from "../components/heading/Heading";
 import { useNavigate } from "react-router-dom";
 import Categories from "../components/categories/Categories";
@@ -11,19 +12,19 @@ import axios from "axios";
 const AddProperty = () => {
   const property = {};
   const navigate = useNavigate();
-  const [toggleError,setToggleError] = useState(false)
+
   const handleChange = (key, e) => {
     property[key] = e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value;
   };
   const handleClick = async () => {
-    if(toggleError)return alert('נא למלא את כל הפרטים!')
+    if (Object.keys(property).length !== 30) return "נא למלא את כל הפרטים!";
+
     await axios.post("https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property", property);
     navigate("/");
   };
   return (
     <>
       <div id={styles.container}>
-        <Heading />
         <div className={styles.input_container}>
           <Input name={"visited"} handleChange={handleChange} width={130} hebrewName={"ביקור בנכס"} type={"date"} />
           <Input name={"available"} handleChange={handleChange} width={120} hebrewName={"תאריך כניסה"} type={"date"} />
@@ -38,11 +39,11 @@ const AddProperty = () => {
           <Input name={"city"} handleChange={handleChange} hebrewName={"יישוב"} />
           <Input name={"neighborhood"} handleChange={handleChange} hebrewName={"שכונה"} />
           <Input name={"street"} handleChange={handleChange} hebrewName={"רחוב"} />
-          <Input name={"streetNumber"} handleChange={handleChange} width={30} hebrewName={"מספר"} type={"number"} />
+          <Input name={"streetNumber"} handleChange={handleChange} width={40} hebrewName={"מספר"} type={"number"} />
         </div>
 
         <div className={styles.input_container}>
-          <Input name={"squareMeter"} width={45} handleChange={handleChange} type={"number"} hebrewName={`מ"ר`} />
+          <Input name={"squareMeter"} width={40} handleChange={handleChange} type={"number"} hebrewName={`מ"ר`} />
           <Select name={"rooms"} handleChange={handleChange} hebrewName={"חדרים"} maxNumber={11} room={true} />
         </div>
         <div className={styles.input_container}>
@@ -85,9 +86,7 @@ const AddProperty = () => {
         <div className={styles.input_container}>
           <Input name={"price"} handleChange={handleChange} hebrewName={"מחיר"} type={"number"} width={80} />
         </div>
-        <button onClick={handleClick} id={styles.btn}>
-          הוספה
-        </button>
+        <AddPropertyBtn handleClick={handleClick} property={property} />
       </div>
     </>
   );

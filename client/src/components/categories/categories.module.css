@@ -2,13 +2,16 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 600px;
+  width: 670px;
+}
+#hebrew_name{
+  width: 130px;
 }
 #container {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 600px;
+  width: 650px;
 }
 #category_container{
   display: flex;

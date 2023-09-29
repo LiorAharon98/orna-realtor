@@ -1,5 +1,5 @@
 #page_container {
-  background-color: rgba(0, 0, 0, 0.943);
+  background: linear-gradient(to right , rgb(2, 89, 249),rgb(87, 152, 249));
   position: fixed;
   display: flex;
   align-items: center;
@@ -11,10 +11,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 350px;
-  height: 140px;
+  width: 320px;
+  height: 100px;
   background-color: rgb(255, 255, 255);
-  border-radius:15px;
+  border-radius:10px;
   font-size: 18px;
 }
 #icon{
