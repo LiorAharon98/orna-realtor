@@ -1,0 +1,12 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 500ms;
+  width: 30px;
+  height: 28px;
+  padding-right: 5px;
+}
+.hamburger {
+  border-bottom: 1.8px solid white;
+}
