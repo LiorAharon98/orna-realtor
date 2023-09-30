@@ -41,10 +41,12 @@ const SpecificProperty = () => {
               if (value === "extended") {
                 return state[value].map((text, currentIndex) => {
                   return (
-                    <div key={index + currentIndex}>
-                      {currentIndex === 0 && <h4>תוספות :</h4>}
+                    <div className={styles.extended_container} key={index + currentIndex}>
+                      <div>
+                        {currentIndex === 0 && <h4>תוספות :</h4>}
 
-                      <p> {text} </p>
+                        <p> {text} </p>
+                      </div>
                     </div>
                   );
                 });

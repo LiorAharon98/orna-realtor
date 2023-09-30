@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 30px;
+  top: 40px;
   height: 100%;
   width: 100%;
 }
@@ -29,6 +29,12 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width:768px) {
+  #container{
+    width: 80%;
+    height: 12%;
   }
 }
 
