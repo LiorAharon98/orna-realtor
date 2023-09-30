@@ -4,13 +4,13 @@
   height: 100%;
   width: 100%;
   background-color: rgb(255, 255, 255);
-  opacity: 0.9;
   transition: 600ms;
 }
 #page_container_inactive {
+  background-color: rgb(255, 255, 255);
   opacity: 0.3;
   position: fixed;
-  transition: 600ms;
+  transition: 700ms;
   width: 100%;
   height: 0%;
 }
@@ -28,7 +28,5 @@
 }
 
 @media screen and (max-width: 768px) {
-  #page_container_active {
-    opacity: 0.95;
-  }
+ 
 }

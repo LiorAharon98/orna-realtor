@@ -1,6 +1,6 @@
 #icon{
     transition: 500ms;
-    font-size: 25px;
-    padding-right: 5px;
-    color: white;
+    font-size: 30px;
+    padding: 10px 10px 0px 0px;
+    color: rgb(0, 60, 255);
 }
