@@ -8,6 +8,11 @@
   justify-content: space-between;
   width: 55%;
 }
+.extended_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .text_container {
   display: flex;
   justify-content: space-between;
