@@ -12,7 +12,11 @@ const Header = () => {
     <>
       <SideBar toggleSideBar={toggleSideBar} handleClick={handleClick} />
       <div className={styles.container}>
-        {toggleSideBar ? <HamburgerActive handleClick={handleClick} /> : <HamburgerInActive handleClick={handleClick} />}
+        {toggleSideBar ? (
+          <HamburgerActive handleClick={handleClick} />
+        ) : (
+          <HamburgerInActive handleClick={handleClick} />
+        )}
       </div>
     </>
   );

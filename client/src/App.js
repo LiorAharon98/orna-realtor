@@ -7,17 +7,15 @@ import Admin from "./pages/Admin";
 import SpecificProperty from "./pages/SpecificProperty";
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/add-property" element={<AddProperty />}></Route>
-          <Route path="/admin" element={<Admin />}></Route>
-          <Route path="/specific-property" element={<SpecificProperty />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/add-property" element={<AddProperty />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/specific-property" element={<SpecificProperty />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

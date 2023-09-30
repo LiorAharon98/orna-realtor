@@ -6,7 +6,8 @@
   width: 30px;
   height: 28px;
   padding-right: 5px;
+  padding: 10px 10px 0px 0px;
 }
 .hamburger {
-  border-bottom: 1.8px solid white;
+  border-bottom: 2.5px solid rgb(1, 77, 254);
 }

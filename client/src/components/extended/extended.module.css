@@ -30,7 +30,7 @@
   #extended_container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 230px;
+    /* justify-content: center; */
+    width: 200px;
   }
 }
