@@ -15,6 +15,7 @@ const Home = () => {
       window.localStorage.setItem("orna", JSON.stringify({ username: "orna", password: "058434812" }));
     }
   };
+
   return (
     <div id={styles.page_container}>
       <div id={styles.right_container}>
