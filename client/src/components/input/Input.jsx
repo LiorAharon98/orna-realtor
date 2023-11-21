@@ -9,6 +9,7 @@ const Input = ({ hebrewName, type, width, handleChange,name  }) => {
         <p className={styles.text}>{hebrewName} :</p>
         <p>{hebrewName === "מחיר" && "₪"}</p>
         <input
+       
           onChange={handleChange.bind(this, name)}
           style={{ width: width ? width : null }}
           type={type}
