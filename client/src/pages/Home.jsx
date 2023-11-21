@@ -29,20 +29,7 @@ const Home = () => {
             </button>
           </form>
         )}
-        {/* {toggle && (
-          <div id={styles.right_container2}>
-            <div id={styles.square_container}>
-              <Link to={"/admin"} className={styles.link_container}>
-                ניהול
-              </Link>
-            </div>
-            <div id={styles.square_container}>
-              <Link to={"/add-property"} className={styles.link_container}>
-                הוספה
-              </Link>
-            </div>
-          </div>
-        )} */}
+    
       </div>
       <div id={styles.left_container}></div>
     </div>
