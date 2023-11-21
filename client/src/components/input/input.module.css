@@ -6,14 +6,15 @@
 }
 #input {
   background-color: white;
-  text-align: right;
+  text-align: center;
   outline: none;
   width: 100px;
   height: 25px;
   border: none;
-  border-bottom: 1.5px solid black;
+  border-bottom: 1px solid black;
   font-size: 15px;
 }
+
 .text {
   font-weight: bolder;
 }

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import styles from "../styles/home.module.css";
 import { Link } from "react-router-dom";
 const Home = () => {
+
   const [toggle, setToggle] = useState(() => {
     const isLogged = JSON.parse(localStorage.getItem("orna"));
     return isLogged;
@@ -28,7 +29,7 @@ const Home = () => {
             </button>
           </form>
         )}
-        {toggle && (
+        {/* {toggle && (
           <div id={styles.right_container2}>
             <div id={styles.square_container}>
               <Link to={"/admin"} className={styles.link_container}>
@@ -41,7 +42,7 @@ const Home = () => {
               </Link>
             </div>
           </div>
-        )}
+        )} */}
       </div>
       <div id={styles.left_container}></div>
     </div>

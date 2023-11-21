@@ -3,7 +3,6 @@ import Input from "../components/input/Input";
 import Select from "../components/select/Select";
 import styles from "../styles/add_property.module.css";
 import AddPropertyBtn from "../components/add_property_btn/AddPropertyBtn";
-import Heading from "../components/heading/Heading";
 import { useNavigate } from "react-router-dom";
 import Categories from "../components/categories/Categories";
 import { airConditioner, airDirection, estateStatus, extended, furniture, sellOrRent, typeEstate } from "../data";
