@@ -7,15 +7,31 @@ const Property = (props) => {
     e.preventDefault();
     navigate("/specific-property", { state: props });
   };
-  const { contact, city, street, streetNumber, price } = props;
+  const { contact, city, street, streetNumber, price, rooms } = props;
   return (
     <Link to={"/"} onClick={handleClick} id={styles.container}>
-      <h4 className={styles.text}>{contact}</h4>
-      <h4 className={styles.text}>{city}</h4>
-      <h4 className={styles.text}>
-        {street} {streetNumber}
-      </h4>
-      <h4 className={styles.text}> ₪ {price} </h4>
+      <div className={styles.container}>
+        <p className={styles.info_text}>איש קשר</p>
+        <h4 className={styles.text}>{contact}</h4>
+      </div>
+      <div className={styles.container}>
+        <p className={styles.info_text}>עיר</p>
+        <h4 className={styles.text}>{city}</h4>
+      </div>
+      <div className={styles.container}>
+        <p className={styles.info_text} >חדרים</p>
+        <h4 className={styles.text}>{rooms}</h4>
+      </div>
+      <div className={styles.container}>
+        <p className={styles.info_text}>רחוב</p>
+        <h4 className={styles.text}>
+          {street} {streetNumber}
+        </h4>
+      </div>
+      <div className={styles.container}>
+        <p className={styles.info_text}>מחיר</p>
+        <h4 className={styles.text}> ₪ {price} </h4>
+      </div>
     </Link>
   );
 };
