@@ -26,9 +26,9 @@ const SpecificProperty = () => {
                 <div key={index} className={styles.text_container}>
                   <h4>{data[index]} : </h4>
                   <p>
-                    {value == "available" || value == "visited"
+                    {value === "available" || value === "visited"
                       ? handleReverseDate(state[value].substring(0, 10))
-                      : state[value]}
+                      : !state[value] ? 'ללא' : state[value]}
                   </p>
                 </div>
               );
@@ -57,7 +57,7 @@ const SpecificProperty = () => {
                   <p>
                     {value == "available" || value == "visited"
                       ? handleReverseDate(state[value].substring(0, 10))
-                      : state[value]}
+                      : !state[value] ? 'ללא' : state[value]}
                   </p>
                 </div>
               );

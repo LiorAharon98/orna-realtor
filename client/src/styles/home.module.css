@@ -76,7 +76,6 @@
     align-items: flex-start;
     height: 50%;
     justify-content: space-around;
-    width: 95%;
   }
   #right_container2 {
     flex-direction: column;
