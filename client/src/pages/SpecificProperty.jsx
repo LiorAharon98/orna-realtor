@@ -18,51 +18,58 @@ const SpecificProperty = () => {
   return (
     <div id={styles.page_container}>
       <div id={styles.container}>
-        <div id={styles.left_container}>
-          {Object.keys(state)
-            .slice(0, 17)
-            .map((value, index) => {
-              return (
-                <div key={index} className={styles.text_container}>
-                  <h4>{data[index]} : </h4>
-                  <p>
-                    {value === "available" || value === "visited"
-                      ? handleReverseDate(state[value].substring(0, 10))
-                      : !state[value] ? 'ללא' : state[value]}
-                  </p>
-                </div>
-              );
-            })}
-        </div>
-        <div id={styles.right_container}>
-          {Object.keys(state)
-            .splice(17)
-            .map((value, index) => {
-              if (value === "extended") {
-                return state[value].map((text, currentIndex) => {
-                  return (
-                    <div className={styles.extended_container} key={index + currentIndex}>
-                      <div>
-                        {currentIndex === 0 && <h4>תוספות :</h4>}
-
-                        <p> {text} </p>
-                      </div>
+        {Object.keys(state).map((value, index) => {
+          return (
+            <div key={index} className={styles.text_container}>
+              {index % 2 === 0 && (
+                <div style={{ width: 150 }}>
+                  {value === "extended" ? (
+                    <div style={{ width: 150 }}>
+                      {state.extended.map((extendedValues, currentIndex) => {
+                        return (
+                          <div key={currentIndex} className={styles.extended_container}>
+                            <div>
+                              {currentIndex == 0 && <h4>תוספות</h4>}
+                              <p>{extendedValues}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
-                  );
-                });
-              }
-              return (
-                <div key={index} className={styles.text_container}>
-                  <h4>{data[index + 17]} : </h4>
-                  <p>
-                    {value == "available" || value == "visited"
-                      ? handleReverseDate(state[value].substring(0, 10))
-                      : !state[value] ? 'ללא' : state[value]}
-                  </p>
+                  ) : (
+                    <>
+                      <h4>{data[index]} : </h4>
+                      <p>
+                        {value === "available" || value === "visited"
+                          ? handleReverseDate(state[value].substring(0, 10))
+                          : !state[value]
+                          ? "ללא"
+                          : state[value]}
+                      </p>
+                    </>
+                  )}
                 </div>
-              );
-            })}
-        </div>
+              )}
+
+              {index % 2 !== 0 && (
+                <div style={{ width: 150 }}>
+                  <>
+                    <h4>{data[index]} : </h4>
+                    <p>
+                      {value === "available" || value === "visited"
+                        ? handleReverseDate(state[value].substring(0, 10))
+                        : !Object.values(state).filter((value2, index2) => {
+                            return index % 2 !== 0;
+                          })[index]
+                        ? "ללא"
+                        : state[value]}
+                    </p>
+                  </>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

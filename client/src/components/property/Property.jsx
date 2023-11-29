@@ -10,27 +10,31 @@ const Property = (props) => {
   const { contact, city, street, streetNumber, price, rooms } = props;
   return (
     <Link to={"/"} onClick={handleClick} id={styles.container}>
-      <div className={styles.container}>
-        <p className={styles.info_text}>איש קשר</p>
-        <h4 className={styles.text}>{contact}</h4>
+      <div>
+        <div className={styles.container}>
+          <h4 className={styles.info_text}>איש קשר</h4>
+          <p className={styles.text}>{contact}</p>
+        </div>
+        <div className={styles.container}>
+          <h4 className={styles.info_text}>עיר</h4>
+          <p className={styles.text}>{city}</p>
+        </div>
+      </div>
+      <div>
+        <div className={styles.container}>
+          <h4 className={styles.info_text}>רחוב</h4>
+          <p className={styles.text}>
+            {street} {streetNumber}
+          </p>
+        </div>
+        <div className={styles.container}>
+          <h4 className={styles.info_text}>חדרים</h4>
+          <p className={styles.text}>{rooms}</p>
+        </div>
       </div>
       <div className={styles.container}>
-        <p className={styles.info_text}>עיר</p>
-        <h4 className={styles.text}>{city}</h4>
-      </div>
-      <div className={styles.container}>
-        <p className={styles.info_text} >חדרים</p>
-        <h4 className={styles.text}>{rooms}</h4>
-      </div>
-      <div className={styles.container}>
-        <p className={styles.info_text}>רחוב</p>
-        <h4 className={styles.text}>
-          {street} {streetNumber}
-        </h4>
-      </div>
-      <div className={styles.container}>
-        <p className={styles.info_text}>מחיר</p>
-        <h4 className={styles.text}> ₪ {price} </h4>
+        <h4 className={styles.info_text}>מחיר</h4>
+        <p className={styles.text}> ₪ {price} </p>
       </div>
     </Link>
   );
