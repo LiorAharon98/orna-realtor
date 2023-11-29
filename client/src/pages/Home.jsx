@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import styles from "../styles/home.module.css";
 import { Link } from "react-router-dom";
 const Home = () => {
-
   const [toggle, setToggle] = useState(() => {
     const isLogged = JSON.parse(localStorage.getItem("orna"));
     return isLogged;
@@ -29,7 +28,6 @@ const Home = () => {
             </button>
           </form>
         )}
-    
       </div>
       <div id={styles.left_container}></div>
     </div>
