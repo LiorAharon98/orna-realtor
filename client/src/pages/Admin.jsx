@@ -15,12 +15,15 @@ const Admin = () => {
   useEffect(() => {
     getProperty();
   }, []);
+  const sortedProperty =[...allProperty].sort((a,b)=>{
+ return a.visited > b.visited ? -1 : 1
+  })
   return (
     <>
       {toggleModal && <Modal />}
       <div id={styles.page_container}>
         <div id={styles.container}>
-          {allProperty.map((property, index) => {
+          {sortedProperty.map((property, index) => {
             return <Property key={index} {...property} />;
           })}
         </div>
