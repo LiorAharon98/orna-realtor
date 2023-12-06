@@ -18,7 +18,7 @@ const Extended = ({ handleChange, name, data }) => {
   }, [items]);
   return (
     <div id={styles.page_container}>
-      <h4> תוספות : </h4>
+      {name ==='extended' && <h4> תוספות : </h4>}
       <div id={styles.extended_container}>
 
       {data.map((item, index) => {

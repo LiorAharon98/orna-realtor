@@ -10,15 +10,18 @@ import Extended from "../components/extended/Extended";
 import axios from "axios";
 const AddProperty = () => {
   const property = {};
+  const serverUrl =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:4000/add-property"
+      : 'https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property", property';
   const navigate = useNavigate();
-
   const handleChange = (key, e) => {
     property[key] = e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value;
   };
   const handleClick = async () => {
     if (Object.keys(property).length !== 30) return "נא למלא את כל הפרטים!";
 
-    await axios.post("https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property", property);
+    await axios.post(serverUrl, property);
     navigate("/");
   };
   const getAddressApi = async (streetName) => {
@@ -86,6 +89,7 @@ const AddProperty = () => {
 
         <Categories name={"airConditioner"} handleChange={handleChange} hebrewName={"מזגנים"} data={airConditioner} />
         <Categories name={"furniture"} handleChange={handleChange} hebrewName={"ריהוט"} data={furniture} />
+
         <Categories
           name={"airDirections"}
           handleChange={handleChange}
