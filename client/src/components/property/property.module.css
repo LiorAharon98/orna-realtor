@@ -8,11 +8,12 @@
   height: 175px;
   text-decoration: none;
   color: rgb(0, 115, 255);
-}
-.text {
-  margin: 0px;
+  text-align: center;
 }
 
+.text{
+  text-align: center;
+}
 #container:hover {
   transition: 500ms;
   border-radius: 10px;
@@ -34,7 +35,5 @@
     text-align: center;
     margin: 0px;
   }
-  .text {
-    text-align: center;
-  }
+
 }

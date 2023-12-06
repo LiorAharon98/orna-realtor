@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Category from "../category/Category";
 import styles from "./categories.module.css";
+import Furniture from "../furniture_category/Furniture";
 const Categories = ({ name, handleChange, hebrewName, data }) => {
   const [toggle, setToggle] = useState("");
-
   const pressHandler = (value) => {
     const e = {
       target: {
@@ -19,8 +19,9 @@ const Categories = ({ name, handleChange, hebrewName, data }) => {
         <p id={styles.hebrew_name}> {hebrewName} : </p>
         <div id={styles.category_container}>
           {data.map((item, index) => {
-            return <Category key={index} pressHandler={pressHandler} toggle={toggle} item={item} />;
+            return <Category name={name} key={index} pressHandler={pressHandler} toggle={toggle} item={item} />;
           })}
+          {name === "furniture" && toggle === "חלקי" && <Furniture handleChange={handleChange} />}
         </div>
       </div>
     </div>
