@@ -13,7 +13,7 @@ const AddProperty = () => {
   const serverUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:4000/add-property"
-      : 'https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property", property';
+      : 'https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property';
   const navigate = useNavigate();
   const handleChange = (key, e) => {
     property[key] = e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value;
