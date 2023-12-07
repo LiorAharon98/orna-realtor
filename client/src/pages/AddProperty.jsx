@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Input from "../components/input/Input";
 import Select from "../components/select/Select";
 import styles from "../styles/add_property.module.css";
