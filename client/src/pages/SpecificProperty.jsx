@@ -23,13 +23,13 @@ const SpecificProperty = () => {
             <div key={index} className={styles.text_container}>
               {index % 2 === 0 && (
                 <div style={{ width: 150 }}>
-                  {value === "extended" ? (
+                  {value === "extended"  || value === 'furniture' ? (
                     <div style={{ width: 150 }}>
-                      {state.extended.map((extendedValues, currentIndex) => {
+                      {state[value].map((extendedValues, currentIndex) => {
                         return (
                           <div key={currentIndex} className={styles.extended_container}>
                             <div>
-                              {currentIndex == 0 && <h4>תוספות</h4>}
+                              {currentIndex == 0 && <h4>{value ==='furniture' ? 'ריהוט' : 'תוספות'}</h4>}
                               <p>{extendedValues}</p>
                             </div>
                           </div>
