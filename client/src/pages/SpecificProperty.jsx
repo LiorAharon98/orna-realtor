@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import styles from "../styles/specific_property.module.css";
+import CopyButton from "../components/copy_button/CopyButton";
 import data from "../hebrewPropertyData";
 const SpecificProperty = () => {
   const location = useLocation();
@@ -22,14 +23,14 @@ const SpecificProperty = () => {
           return (
             <div key={index} className={styles.text_container}>
               {index % 2 === 0 && (
-                <div style={{ width: 150 }}>
-                  {value === "extended"  || value === 'furniture' ? (
-                    <div style={{ width: 150 }}>
+                <div style={{ width: 145 }}>
+                  {Array.isArray(Object.values(state)[index]) ? (
+                    <div>
                       {state[value].map((extendedValues, currentIndex) => {
                         return (
                           <div key={currentIndex} className={styles.extended_container}>
                             <div>
-                              {currentIndex == 0 && <h4>{value ==='furniture' ? 'ריהוט' : 'תוספות'}</h4>}
+                              {currentIndex == 0 && <h4>{value === "furniture" ? "ריהוט" : "תוספות"}</h4>}
                               <p>{extendedValues}</p>
                             </div>
                           </div>
@@ -71,6 +72,7 @@ const SpecificProperty = () => {
           );
         })}
       </div>
+      <CopyButton state={state} />
     </div>
   );
 };
