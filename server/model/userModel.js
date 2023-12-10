@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
   safeRoom : Number,
   airConditioner: String,
   furniture:Array,
-  airDirections: String,
+  airDirections: Array,
   extended: Array,
   propertyTax: Number,
   committee: Number,

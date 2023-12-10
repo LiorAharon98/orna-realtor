@@ -6,9 +6,12 @@ import Modal from "../components/modal/Modal";
 const Admin = () => {
   const [allProperty, setAllProperty] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
+  const serverUrl = process.env.NODE_ENV === "development"
+      ? "http://localhost:4000/admin"
+      : "https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/admin";
   const getProperty = async () => {
     setToggleModal(true);
-    const response = await axios.get("https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/admin");
+    const response =  await axios.get(serverUrl);
     setAllProperty(response.data);
     setToggleModal(false);
   };

@@ -63,7 +63,7 @@
 #left_container {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: linear-gradient(to bottom, rgb(13, 85, 253), rgb(71, 114, 255));
+  background: linear-gradient(45deg,rgb(0, 8, 255) , rgb(17, 92, 254));
   height: 100%;
   width: 50%;
 }

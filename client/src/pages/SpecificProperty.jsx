@@ -63,7 +63,7 @@ const SpecificProperty = () => {
                             return index % 2 !== 0;
                           })[index]
                         ? "ללא"
-                        : state[value]}
+                        : state[value] + ' '}
                     </p>
                   </>
                 </div>
