@@ -17,9 +17,9 @@ const message = (state) => {
     `ממ'ד`,
     "שירותים",
     "אמבטיה",
+    "מקלחון",
     "מחסן",
     "מעלית",
-    "מקלחון",
     "",
     "תאריך כניסה",
     "כיווני אוויר",
@@ -34,8 +34,7 @@ const message = (state) => {
     if (!value || index === 23 || index === 21) return;
     return hebrewText[index] + " " + value +'\n';
   });
-
-  console.log(message +'אורנה אהרון שיווק נכסים');
+  console.log(`${message} אורנה אהרון שיווק נכסים'`);
   navigator.clipboard.writeText(message +'אורנה אהרון שיווק נכסים');
   return message;
 };

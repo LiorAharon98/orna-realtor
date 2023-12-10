@@ -51,18 +51,14 @@ const Property = (props) => {
             {street} {streetNumber}
           </p>
         </div>
-        <div className={styles.container}>
-          <h4 className={styles.info_text}>חדרים</h4>
-          <p className={styles.text}>{rooms}</p>
-        </div>
       </div>
       <div className={styles.container}>
         <h4 className={styles.info_text}>מחיר</h4>
         <p className={styles.text}> ₪ {changePriceWithDot()} </p>
-        <p onClick={handleEditPriceClick} className={styles.text}>
+        {/* <p onClick={handleEditPriceClick} className={styles.text}>
           {" "}
           שינוי מחיר{" "}
-        </p>
+        </p> */}
       </div>
     </Link>
   );

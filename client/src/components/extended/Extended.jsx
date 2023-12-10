@@ -19,6 +19,7 @@ const Extended = ({ handleChange, name, data }) => {
   return (
     <div id={styles.page_container}>
       {name ==='extended' && <h4> תוספות : </h4>}
+      {name ==='airDirections' && <h4> כיווני אוויר : </h4>}
       <div id={styles.extended_container}>
 
       {data.map((item, index) => {

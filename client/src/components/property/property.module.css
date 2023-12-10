@@ -2,13 +2,17 @@
   border-bottom: 1px solid rgb(41, 137, 255);
   transition: 500ms;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 175px;
+  height: 170px;
   text-decoration: none;
-  color: rgb(0, 115, 255);
+  background: linear-gradient(45deg,rgb(0, 8, 255) , rgb(17, 92, 254));
+  border-radius: 15px;
+  margin: 5px;
+  color: white;
   text-align: center;
+  box-shadow:rgba(0, 38, 255, 0.706) 1px 5px 15px 5px
 }
 
 .text{
