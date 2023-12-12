@@ -31,7 +31,9 @@
     justify-content: space-around;
     height: 75px;
   }
-
+#container{
+  height: 160px;
+}
   .info_text {
     text-align: center;
     margin: 0px;

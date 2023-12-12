@@ -8,4 +8,8 @@ router.post("/add-property", async (req, res) => {
   await UserModel.create(req.body);
   res.json(true);
 });
+router.put("/change-price", async (req, res) => {
+  const user = await UserModel.findOneAndUpdate({ _id: req.body.id }, { price: req.body.inp },{new : true});
+  res.json(user);
+});
 module.exports = router;

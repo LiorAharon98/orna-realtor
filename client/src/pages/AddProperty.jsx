@@ -76,7 +76,7 @@ const AddProperty = () => {
         </div>
         <div className={styles.input_container}>
           <Select name={"safeRoom"} handleChange={handleChange} hebrewName={"ממ'ד"} maxNumber={2} />
-          <Select name={"elevator"} handleChange={handleChange} hebrewName={"מעלית"} maxNumber={2} />
+          <Select name={"elevator"} handleChange={handleChange} hebrewName={"מעלית"} maxNumber={3} />
         </div>
         <div className={styles.input_container}>
           <Select name={"bathtub"} handleChange={handleChange} hebrewName={`אמבטיה`} maxNumber={4} />

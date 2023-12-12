@@ -1,17 +1,13 @@
-import React, { useState } from "react";
 import styles from "./property.module.css";
 import { useNavigate, Link } from "react-router-dom";
 const Property = (props) => {
-  const [toggleChangePrice, setToggleChangePrice] = useState(false);
+  const { contact, city, street, streetNumber, price } = props;
   const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
     navigate("/specific-property", { state: props });
   };
-  const handleEditPriceClick = () => {
-    setToggleChangePrice(true);
-  };
-  const { contact, city, street, streetNumber, price, rooms } = props;
+
   const changePriceWithDot = () => {
     let test = 0;
     const numberAfterChange = price.toString();
@@ -55,10 +51,6 @@ const Property = (props) => {
       <div className={styles.container}>
         <h4 className={styles.info_text}>מחיר</h4>
         <p className={styles.text}> ₪ {changePriceWithDot()} </p>
-        {/* <p onClick={handleEditPriceClick} className={styles.text}>
-          {" "}
-          שינוי מחיר{" "}
-        </p> */}
       </div>
     </Link>
   );
