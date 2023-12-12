@@ -1,12 +1,12 @@
 const message = (state) => {
   const hebrewText = [
     "ל",
-    "",
-    "",
-    "",
+    '',
+    '',
+    '',
     "בשכונת",
     "רחוב",
-    "",
+    '',
     `מ'ר`,
     "חדרים",
     "קומה",
@@ -18,20 +18,21 @@ const message = (state) => {
     "שירותים",
     "אמבטיה",
     "מקלחון",
-    "מחסן",
     "מעלית",
-    "",
+    "מחסן",
+    "מיזוג :",
     "תאריך כניסה",
     "כיווני אוויר",
     "מחיר ₪",
     "ארנונה ₪",
     "ועד ₪",
-    "מחיר",
+    "מחיר ₪",
     
   ];
   const afterSplice = Object.values(state).slice(3);
   const message = Object.values(afterSplice).map((value, index) => {
-    if (!value || index === 23 || index === 21) return;
+    if(index===0) return `ל${value} בבלעדיות`
+    if (!value || index === 23 || index === 21) return
     return hebrewText[index] + " " + value +'\n';
   });
   console.log(`${message} אורנה אהרון שיווק נכסים'`);

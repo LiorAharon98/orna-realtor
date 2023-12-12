@@ -1,0 +1,17 @@
+#inp {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: 1.5px solid rgb(0, 94, 255);
+  width: 120px;
+  text-align: center;
+  font-size: 18px;
+}
+#btn {
+  width: 60%;
+  height: 35px;
+  background-color: rgb(0, 94, 255);
+  border-radius: 10px;
+  border: none;
+  color: white;
+}

@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./modal.module.css";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-const Modal = () => {
+const Modal = ({children}) => {
   return (
     <div id={styles.page_container}>
-      <div id={styles.container}><AiOutlineLoading3Quarters id={styles.icon}/> </div>
+      <div id={styles.container}>
+        {children}
+    
+      </div>
     </div>
   );
 };
