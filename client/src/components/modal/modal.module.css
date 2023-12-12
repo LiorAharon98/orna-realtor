@@ -18,20 +18,7 @@
   border-radius:10px;
   font-size: 18px;
 }
-#icon{
-  font-size: 28px;
-  color: rgb(2, 83, 246);
-  margin: 10px;
-  animation: spin infinite 2s linear;
-}
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 @media screen and (max-width:768px) {
   #container{
     width: 80%;

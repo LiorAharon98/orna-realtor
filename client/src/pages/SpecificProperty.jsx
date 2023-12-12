@@ -52,7 +52,7 @@ const SpecificProperty = () => {
                             ? handleReverseDate(state[value].substring(0, 10))
                             : !state[value]
                             ? "ללא"
-                            : state[value]}
+                            : state[value] + " "}
                         </p>
                       </>
                     )}

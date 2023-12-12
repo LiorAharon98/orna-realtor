@@ -28,7 +28,7 @@ const Admin = () => {
     <>
       {toggleModal && (
         <Modal>
-          <AiOutlineLoading3Quarters />{" "}
+          <AiOutlineLoading3Quarters id={styles.icon} />{" "}
         </Modal>
       )}
       <div id={styles.page_container}>
