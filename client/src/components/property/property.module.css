@@ -3,18 +3,17 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 170px;
-  text-decoration: none;
-  background: linear-gradient(45deg,rgb(0, 8, 255) , rgb(17, 92, 254));
-  border-radius: 15px;
+  width: 45%;
   margin: 5px;
+  text-decoration: none;
+  background: linear-gradient(45deg, rgb(0, 8, 255), rgb(17, 92, 254));
+  border-radius: 15px;
   color: white;
   text-align: center;
-  box-shadow:rgba(0, 38, 255, 0.706) 1px 3px 5px 1px
+  box-shadow: rgba(0, 38, 255, 0.706) 1px 3px 5px 1px;
 }
 
-.text{
+.text {
   text-align: center;
 }
 #container:hover {
@@ -28,15 +27,13 @@
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 75px;
   }
-#container{
-  height: 160px;
-}
+  #container {
+    height: 160px;
+    width: 100%;
+  }
   .info_text {
     text-align: center;
     margin: 0px;
   }
-
 }

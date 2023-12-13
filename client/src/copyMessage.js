@@ -7,14 +7,14 @@ const message = (state) => {
     "בשכונת",
     "רחוב",
     '',
-    `מ'ר`,
+    `מ"ר`,
     "חדרים",
     "קומה",
     "מתוך",
     "מרפסת שמש",
     "מרפסת שירות",
     "חנייה",
-    `ממ'ד`,
+    `ממ"ד`,
     "שירותים",
     "אמבטיה",
     "מקלחון",
@@ -29,14 +29,19 @@ const message = (state) => {
     "מחיר ₪",
     
   ];
-  const afterSplice = Object.values(state).slice(3);
+  const afterSplice = Object.values(state).slice(4);
   const message = Object.values(afterSplice).map((value, index) => {
     if(index===0) return `ל${value} בבלעדיות`
+    if(value ==1) return `${hebrewText[index]} \n`
     if (!value || index === 23 || index === 21) return
-    return hebrewText[index] + " " + value +'\n';
+    if(index ===13 && value >1) return `חניות ${value} \n`
+    if(index ===18 && value >1) return `מעליות ${value} \n`
+    return `${hebrewText[index]} ${value}\n`;
   });
-  console.log(`${message} אורנה אהרון שיווק נכסים'`);
-  navigator.clipboard.writeText(message +'אורנה אהרון שיווק נכסים');
+  message.push('אורנה אהרון שיווק נכסים' +'\n')
+  message.push('0504215530')
+  console.log(message);
+  navigator.clipboard.writeText(message.join(''));
   return message;
 };
 export default message;
