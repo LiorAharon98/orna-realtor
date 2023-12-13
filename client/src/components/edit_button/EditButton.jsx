@@ -26,7 +26,7 @@ const EditButton = ({ id }) => {
     <>
       <CiEdit onClick={handleEditPriceClick} fontSize={30} />
       {toggleChangePrice && (
-        <Modal>
+        <Modal opacity={0.9}>
           <input id={styles.inp} onChange={handleChange} />
 
           <button id={styles.btn} onClick={handleClick}>

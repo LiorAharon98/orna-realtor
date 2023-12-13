@@ -31,15 +31,13 @@ const Admin = () => {
           <AiOutlineLoading3Quarters id={styles.icon} />{" "}
         </Modal>
       )}
-      <div id={styles.page_container}>
-        <Animate play duration={1.5} start={{ opacity: 0 }} end={{ opacity: 1 }}>
+        <Animate  play duration={1.5} start={{ opacity: 0 }} end={{ opacity: 1 }}>
           <div id={styles.container}>
             {sortedProperty.map((property, index) => {
               return <Property key={index} {...property} />;
             })}
           </div>
         </Animate>
-      </div>
     </>
   );
 };

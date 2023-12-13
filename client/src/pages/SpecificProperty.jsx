@@ -27,6 +27,15 @@ const SpecificProperty = () => {
       <div id={styles.page_container}>
         <div id={styles.container}>
           {Object.keys(rest).map((value, index) => {
+            if (value === "available" || value === "visited")
+              return (
+                <div className={styles.text_container}>
+                  <div key={index}>
+                    <h4>{value === "available" ? "תאריך כניסה" : "ביקור בנכס"}</h4>
+                    <p>{handleReverseDate(state[value].substring(0, 10))}</p>
+                  </div>
+                </div>
+              );
             return (
               <div key={index} className={styles.text_container}>
                 {index % 2 === 0 && (
@@ -36,10 +45,8 @@ const SpecificProperty = () => {
                         {state[value].map((extendedValues, currentIndex) => {
                           return (
                             <div key={currentIndex} className={styles.extended_container}>
-                              <div>
-                                {currentIndex == 0 && <h4>{value === "furniture" ? "ריהוט" : "תוספות"}</h4>}
-                                <p>{extendedValues}</p>
-                              </div>
+                              {currentIndex == 0 && <h4>{value === "furniture" ? "ריהוט" : "תוספות"}</h4>}
+                              <p>{extendedValues}</p>
                             </div>
                           );
                         })}
@@ -47,13 +54,8 @@ const SpecificProperty = () => {
                     ) : (
                       <>
                         <h4>{data[index]} : </h4>
-                        <p>
-                          {value === "available" || value === "visited"
-                            ? handleReverseDate(state[value].substring(0, 10))
-                            : !state[value]
-                            ? "ללא"
-                            : state[value] + " "}
-                        </p>
+
+                        <p>{!state[value] ? "ללא" : state[value] + " "}</p>
                       </>
                     )}
                   </div>
@@ -64,11 +66,11 @@ const SpecificProperty = () => {
                     <>
                       <h4>{data[index]} : </h4>
                       <p>
-                        {value === "available" || value === "visited"
-                          ? handleReverseDate(state[value].substring(0, 10))
-                          : !Object.values(state).filter((value2, index2) => {
-                              return index % 2 !== 0;
-                            })[index]
+                        {!Object.values(state).filter((value2, index2) => {
+                          return index % 2 !== 0;
+                        })[index] && !state[value]
+                          ? "ללא"
+                          : !state[value]
                           ? "ללא"
                           : state[value] + " "}
                       </p>
