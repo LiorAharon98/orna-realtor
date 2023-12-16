@@ -25,10 +25,5 @@
     flex-direction: column;
   }
 
-  .text_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
-  }
+
 }
