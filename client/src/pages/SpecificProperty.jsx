@@ -4,6 +4,7 @@ import styles from "../styles/specific_property.module.css";
 import CopyButton from "../components/copy_button/CopyButton";
 import data from "../hebrewPropertyData";
 import EditButton from "../components/edit_button/EditButton";
+import DeleteButton from "../components/delete_button/DeleteButton";
 const SpecificProperty = () => {
   const location = useLocation();
   const { state } = location;
@@ -20,8 +21,9 @@ const SpecificProperty = () => {
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div style={{ display: "flex", justifyContent: "space-around", width: "95%" }}>
         <EditButton id={id} />
+        <DeleteButton  id={id} />
         <CopyButton state={state} />
       </div>
       <div id={styles.page_container}>
@@ -29,8 +31,8 @@ const SpecificProperty = () => {
           {Object.keys(rest).map((value, index) => {
             if (value === "available" || value === "visited")
               return (
-                <div className={styles.text_container}>
-                  <div key={index}>
+                <div key={index} className={styles.text_container}>
+                  <div>
                     <h4>{value === "available" ? "תאריך כניסה" : "ביקור בנכס"}</h4>
                     <p>{handleReverseDate(state[value].substring(0, 10))}</p>
                   </div>
@@ -39,7 +41,7 @@ const SpecificProperty = () => {
             return (
               <div key={index} className={styles.text_container}>
                 {index % 2 === 0 && (
-                  <div style={{ width: 145 }}>
+                  <>
                     {Array.isArray(Object.values(state)[index]) ? (
                       <div>
                         {state[value].map((extendedValues, currentIndex) => {
@@ -53,28 +55,28 @@ const SpecificProperty = () => {
                       </div>
                     ) : (
                       <>
-                        <h4>{data[index]} : </h4>
+                        <div>
+                          <h4>{data[index]} : </h4>
 
-                        <p>{!state[value] ? "ללא" : state[value] + " "}</p>
+                          <p>{!state[value] ? "ללא" : state[value] + " "}</p>
+                        </div>
                       </>
                     )}
-                  </div>
+                  </>
                 )}
 
                 {index % 2 !== 0 && (
                   <div style={{ width: 150 }}>
-                    <>
-                      <h4>{data[index]} : </h4>
-                      <p>
-                        {!Object.values(state).filter((value2, index2) => {
-                          return index % 2 !== 0;
-                        })[index] && !state[value]
-                          ? "ללא"
-                          : !state[value]
-                          ? "ללא"
-                          : state[value] + " "}
-                      </p>
-                    </>
+                    <h4>{data[index]} : </h4>
+                    <p>
+                      {!Object.values(state).filter((value2, index2) => {
+                        return index % 2 !== 0 && index2 !== Object.values(state).length - 1;
+                      })[index] && !state[value]
+                        ? "ללא"
+                        : !state[value]
+                        ? "ללא"
+                        : state[value] + " "}
+                    </p>
                   </div>
                 )}
               </div>

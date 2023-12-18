@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CiEdit } from "react-icons/ci";
 import axios from "axios";
 import styles from "./edit_button.module.css";
+import { AiOutlineClose } from "react-icons/ai";
 import Modal from "../modal/Modal";
 const EditButton = ({ id }) => {
   const [toggleChangePrice, setToggleChangePrice] = useState(false);
@@ -10,7 +11,7 @@ const EditButton = ({ id }) => {
     setToggleChangePrice((prev) => !prev);
   };
   const handleClick = () => {
-    if(!inp || inp.length<4) return alert('מספר לא תקין')
+    if (!inp || inp.length < 4) return alert("מספר לא תקין");
     const data = { id, inp };
     const serverUrl =
       process.env.NODE_ENV === "development"
@@ -27,6 +28,8 @@ const EditButton = ({ id }) => {
       <CiEdit onClick={handleEditPriceClick} fontSize={30} />
       {toggleChangePrice && (
         <Modal opacity={0.9}>
+          <AiOutlineClose id={styles.icon} onClick={setToggleChangePrice.bind(this, false)} />
+
           <input id={styles.inp} onChange={handleChange} />
 
           <button id={styles.btn} onClick={handleClick}>

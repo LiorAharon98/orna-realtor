@@ -15,7 +15,7 @@
   flex-direction:  column;
   justify-content: space-between;
   width: 320px;
-  height: 100px;
+  height: 300px;
   border-radius:10px;
   font-size: 18px;
 }
@@ -23,7 +23,7 @@
 @media screen and (max-width:768px) {
   #container{
     width: 80%;
-    height: 12%;
+    height: 30%;
   }
 }
 

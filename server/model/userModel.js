@@ -32,5 +32,5 @@ const userSchema = new mongoose.Schema({
   price: Number,
 });
 
-const UserModel = mongoose.model("users", userSchema);
+const UserModel = mongoose.model("properties", userSchema);
 module.exports = UserModel;
