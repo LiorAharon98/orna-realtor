@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import data from "../../furniture";
 import Extended from "../extended/Extended";
 const Furniture = ({handleChange}) => {
