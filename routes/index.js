@@ -9,7 +9,11 @@ router.post("/add-property", async (req, res) => {
   res.json(true);
 });
 router.put("/change-price", async (req, res) => {
-  const user = await UserModel.findOneAndUpdate({ _id: req.body.id }, { price: req.body.inp },{new : true});
+  const user = await UserModel.findOneAndUpdate({ _id: req.body.id }, { price: req.body.inp }, { new: true });
+  res.json(user);
+});
+router.put("/delete-property", async (req, res) => {
+  const user = await UserModel.deleteOne({ _id: req.body.id }, { new: true });
   res.json(user);
 });
 module.exports = router;
