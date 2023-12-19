@@ -5,6 +5,7 @@ import CopyButton from "../components/copy_button/CopyButton";
 import data from "../hebrewPropertyData";
 import EditButton from "../components/edit_button/EditButton";
 import DeleteButton from "../components/delete_button/DeleteButton";
+import AdminHeader from "../components/admin_header/AdminHeader";
 const SpecificProperty = () => {
   const location = useLocation();
   const { state } = location;
@@ -21,11 +22,7 @@ const SpecificProperty = () => {
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-around", width: "95%" }}>
-        <EditButton id={id} />
-        <DeleteButton  id={id} />
-        <CopyButton state={state} />
-      </div>
+    <AdminHeader id={id} state={state}/>
       <div id={styles.page_container}>
         <div id={styles.container}>
           {Object.keys(rest).map((value, index) => {
@@ -70,7 +67,7 @@ const SpecificProperty = () => {
                     <h4>{data[index]} : </h4>
                     <p>
                       {!Object.values(state).filter((value2, index2) => {
-                        return index % 2 !== 0 && index2 !== Object.values(state).length - 1;
+                        return index % 2 !== 0 && index2 !== Object.values(state).length;
                       })[index] && !state[value]
                         ? "ללא"
                         : !state[value]
