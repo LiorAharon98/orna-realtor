@@ -31,13 +31,19 @@ const Admin = () => {
           <AiOutlineLoading3Quarters id={styles.icon} />{" "}
         </Modal>
       )}
-        <Animate  play duration={1.5} start={{ opacity: 0 }} end={{ opacity: 1 }}>
-          <div id={styles.container}>
-            {sortedProperty.map((property, index) => {
-              return <Property key={index} {...property} />;
-            })}
+      <Animate play duration={2} start={{ opacity: 0 }} end={{ opacity: 1 }}>
+        <div id={styles.container}>
+          <div id={styles.tag_container}>
+            <p>איש קשר</p>
+            <p>רחוב</p>
+            <p>עיר</p>
+            <p>מחיר</p>
           </div>
-        </Animate>
+          {sortedProperty.map((property, index) => {
+            return <Property key={index} {...property} />;
+          })}
+        </div>
+      </Animate>
     </>
   );
 };

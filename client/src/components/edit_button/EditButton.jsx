@@ -30,7 +30,7 @@ const EditButton = ({ id }) => {
         <Modal opacity={0.9}>
           <AiOutlineClose id={styles.icon} onClick={setToggleChangePrice.bind(this, false)} />
 
-          <input id={styles.inp} onChange={handleChange} />
+          <input type='number' id={styles.inp} onChange={handleChange} />
 
           <button id={styles.btn} onClick={handleClick}>
             עדכון
