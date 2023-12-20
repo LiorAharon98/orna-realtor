@@ -30,26 +30,19 @@ const Property = (props) => {
 
   return (
     <Link to={"/"} onClick={handleClick} id={styles.container}>
-      <div>
-        <div className={styles.container}>
-          <h4 className={styles.info_text}>איש קשר</h4>
-          <p className={styles.text}>{contact}</p>
-        </div>
-        <div className={styles.container}>
-          <h4 className={styles.info_text}>עיר</h4>
-          <p className={styles.text}>{city}</p>
-        </div>
+      <div className={styles.container}>
+        <p className={styles.text}>{contact}</p>
+      </div>
+      <div className={styles.container}>
+        <p className={styles.text}>{city}</p>
       </div>
       <div>
         <div className={styles.container}>
-          <h4 className={styles.info_text}>רחוב</h4>
-          <p className={styles.text}>
-            {street} {streetNumber}
-          </p>
+          <p className={styles.text}>{street}</p>
+          <p className={styles.text}> {streetNumber}</p>
         </div>
       </div>
       <div className={styles.container}>
-        <h4 className={styles.info_text}>מחיר</h4>
         <p className={styles.text}> ₪ {changePriceWithDot()} </p>
       </div>
     </Link>

@@ -1,3 +1,5 @@
+import handleReverseDate from "./handleReverseDate";
+
 const message = (state) => {
   const hebrewText = [
     "ל",
@@ -32,11 +34,13 @@ const message = (state) => {
   const message = Object.values(afterSplice).map((value, index) => {
     if (index === 0) return `ל${value} בבלעדיות`;
     if (value == 1) return `${hebrewText[index]}\n`;
-    if(!value) return
+    if (!value) return;
     if (index === 13 && value > 1) return `חניות ${value}\n`;
     if (index === 18 && value > 1) return `מעליות ${value}\n`;
-    return`${hebrewText[index]} ${value}\n`;
+
+    return `${hebrewText[index]} ${value}\n`;
   });
+  message.push(`תאריך כניסה : ${handleReverseDate(state.available.substring(0, 10))} \n`);
   message.push("אורנה אהרון שיווק נכסים" + "\n");
   message.push("0504215530");
   console.log(message);
