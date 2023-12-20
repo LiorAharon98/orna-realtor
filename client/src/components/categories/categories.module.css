@@ -4,9 +4,7 @@
   flex-wrap: wrap;
   width: 670px;
 }
-#hebrew_name {
-  font-weight: bold;
-}
+
 #container {
   align-items: center;
   display: flex;

@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgb(148, 148, 148);
   width: 85px;
   height: 35px;
   border-radius: 15px;
@@ -16,7 +17,7 @@
   height: 35px;
   margin: 5px;
   text-decoration: underline;
-  color: rgb(13, 156, 252);
+  color: rgb(5, 93, 255);
 
   transition: 500ms;
 }
