@@ -1,12 +1,14 @@
+import { useState } from "react";
 import message from "../../copyMessage";
-import { IoCopy } from "react-icons/io5";
+import { BiSolidCopy } from "react-icons/bi";
+import { FaCheck } from "react-icons/fa6";
 const CopyButton = ({ state }) => {
+  const [toggle, setToggle] = useState(false);
   const handleClick = () => {
     message(state);
+    setToggle(true);
   };
-  return (
-      <IoCopy onClick={handleClick} color="rgb(0, 106, 255)"  fontSize={30} />
-  );
+  return <>{toggle ? <FaCheck size={25} /> : <BiSolidCopy size={25} onClick={handleClick} />}</>;
 };
 
 export default CopyButton;

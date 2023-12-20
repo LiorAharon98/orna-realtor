@@ -31,6 +31,7 @@ const Admin = () => {
           <AiOutlineLoading3Quarters id={styles.icon} />{" "}
         </Modal>
       )}
+      {allProperty.length>0 &&
       <Animate play duration={2} start={{ opacity: 0 }} end={{ opacity: 1 }}>
         <div id={styles.container}>
           <div id={styles.tag_container}>
@@ -44,6 +45,7 @@ const Admin = () => {
           })}
         </div>
       </Animate>
+        }
     </>
   );
 };

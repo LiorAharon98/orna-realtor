@@ -6,9 +6,12 @@ import styles from "./admin_header.module.css"
 const AdminHeader = ({ id, state }) => {
   return (
     <div className={styles.container} >
+      <div id={styles.tag_container}>
+
       <EditButton id={id} />
       <DeleteButton id={id} />
       <CopyButton state={state} />
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const DeleteButton = ({ id }) => {
   };
   return (
     <>
-      <MdDelete onClick={setToggleModal.bind(this, true)} size={30} color="rgb(0, 106, 255)" />
+      <MdDelete onClick={setToggleModal.bind(this, true)} size={25}/>
       {toggleModal && (
         <Modal opacity={0.9}>
           <AiOutlineClose id={styles.icon} onClick={setToggleModal.bind(this, false)} />
