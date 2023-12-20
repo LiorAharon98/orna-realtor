@@ -25,12 +25,12 @@ const EditButton = ({ id }) => {
   };
   return (
     <>
-      <CiEdit onClick={handleEditPriceClick} fontSize={30} />
+      <CiEdit onClick={handleEditPriceClick} fontSize={25} />
       {toggleChangePrice && (
         <Modal opacity={0.9}>
           <AiOutlineClose id={styles.icon} onClick={setToggleChangePrice.bind(this, false)} />
 
-          <input type='number' id={styles.inp} onChange={handleChange} />
+          <input type="number" id={styles.inp} onChange={handleChange} />
 
           <button id={styles.btn} onClick={handleClick}>
             עדכון
