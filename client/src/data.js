@@ -1,7 +1,7 @@
 export const sellOrRent = ["השכרה", "מכירה"];
 export const airConditioner = ["מיני מרכזי", "בכל חדר",'מזגן', "גם וגם", "VRF", "דמפרים"];
 export const airDirection = ["צפון", "דרום", "מזרח", "מערב"];
-export const typeEstate = ["דירה", "דירת גן", "פנטהאוז", "בית קרקע"];
+export const typeEstate = ["דירה", "דירת גן", "פנטהאוז", "בית קרקע","מסחרי"];
 export const estateStatus = ["חדש מקבלן", "משופץ", "במצב טוב", "שמור", "דורש שיפוץ"];
 export const furniture = ["ללא", "חלקי", "מלא"];
 export const extended = [
