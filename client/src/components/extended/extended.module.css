@@ -20,7 +20,7 @@
 #extended_container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 @media screen and (max-width:768px) {
   #page_container{
@@ -29,7 +29,5 @@
   }
   #extended_container{
     display: flex;
-    flex-wrap: wrap;
-    width: 200px;
   }
 }
