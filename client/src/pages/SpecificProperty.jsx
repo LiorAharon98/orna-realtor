@@ -8,16 +8,16 @@ const SpecificProperty = () => {
   const location = useLocation();
   const { state } = location;
   const id = state._id;
-  const { _id, ...rest } = state;
-  delete state.__v;
-
+  const infoData = { ...state };
+  delete infoData.__v;
+  delete infoData._id;
 
   return (
     <>
       <AdminHeader id={id} state={state} />
       <div id={styles.page_container}>
         <div id={styles.container}>
-          {Object.keys(rest).map((value, index) => {
+          {Object.keys(infoData).map((value, index) => {
             if (value === "available" || value === "visited")
               return (
                 <div key={index} className={styles.text_container}>
@@ -32,30 +32,33 @@ const SpecificProperty = () => {
                 {index % 2 === 0 && (
                   <>
                     {Array.isArray(Object.values(state)[index]) ? (
-                      <div>
-                        {state[value].map((extendedValues, currentIndex) => {
-                          return (
-                            <div key={currentIndex} className={styles.extended_container}>
-                              {currentIndex == 0 && <h4>{value === "furniture" ? "ריהוט" : "תוספות"}</h4>}
-                              <p>{extendedValues}</p>
-                            </div>
-                          );
-                        })}
+                      <div className={styles.test}>
+                        <h4>תוספות :</h4>
+                        <div className={styles.test2}>
+                          {state[value].extendedValues && <h4>{value === "furniture" ? "ריהוט" : "תוספות"}</h4>}
+                          {state[value].map((extendedValues, currentIndex) => {
+                            return (
+                              <div key={currentIndex} className={styles.extended_container}>
+                                <p>{extendedValues}</p>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                     ) : (
-                      <>
-                        <div>
+                        <div className={index == 24 ? styles.test : styles.extended_container}>
                           <h4>{data[index]} : </h4>
+                          <div className={styles.test2}>
 
-                          <p>{!state[value] ? "ללא" : state[value] + " "}</p>
+                            <p>{!state[value] ? "ללא" : state[value] + " "}</p>
+                          </div>
                         </div>
-                      </>
                     )}
                   </>
                 )}
 
                 {index % 2 !== 0 && (
-                  <div style={{ width: 150 }}>
+                  <div>
                     <h4>{data[index]} : </h4>
                     <p>
                       {!Object.values(state).filter((value2, index2) => {

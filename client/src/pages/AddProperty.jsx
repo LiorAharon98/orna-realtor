@@ -7,6 +7,7 @@ import Categories from "../components/categories/Categories";
 import { airConditioner, airDirection, estateStatus, extended, furniture, sellOrRent, typeEstate } from "../data";
 import Extended from "../components/extended/Extended";
 import axios from "axios";
+import handleReverseDate from "../handleReverseDate";
 const AddProperty = () => {
   const property = {};
   const serverUrl =
@@ -14,12 +15,17 @@ const AddProperty = () => {
       ? "http://localhost:4000/add-property"
       : "https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property";
   const navigate = useNavigate();
+  const day = new Date().getDate()
+  const month = new Date().getMonth()+1
+  const year = new Date().getFullYear()
+  const final = `${day}-${month}-${year}`
   const handleChange = (key, e) => {
+   
     property[key] = e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value;
+  if(property.available == final) return alert('yes')
   };
   const handleClick = async () => {
     if (Object.keys(property).length !== 30) return "נא למלא את כל הפרטים!";
-
     await axios.post(serverUrl, property);
     navigate("/");
   };
