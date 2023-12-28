@@ -33,8 +33,10 @@ const message = (state) => {
   const afterSplice = Object.values(state).slice(4);
   const message = Object.values(afterSplice).map((value, index) => {
     if (index === 0) return `ל${value} בבלעדיות`;
-    if (value == 1) return `${hebrewText[index]}\n`;
+    if(index ===5) return `${hebrewText[index]} ${value}`
+    if (value == 1 && index!==6) return `${hebrewText[index]}\n`;
     if (!value) return;
+    
     if (index === 13 && value > 1) return `חניות ${value}\n`;
     if (index === 18 && value > 1) return `מעליות ${value}\n`;
 
