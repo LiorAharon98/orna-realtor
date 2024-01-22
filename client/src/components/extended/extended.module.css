@@ -14,6 +14,7 @@
   color: rgb(5, 93, 255);
 }
 .item_inactive {
+  text-decoration: none;
   transition: 500ms;
   margin: 5px;
 }

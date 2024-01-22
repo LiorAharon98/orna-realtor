@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   visited: Date,
-  available: Date,
+  available: mongoose.Schema.Types.Mixed,
   contact : String,
   rentOrSell: String,
   type: String,
@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
   showerStall: String,
   elevator: Number,
   safeRoom : Number,
-  airConditioner: String,
+  airConditioner: Array,
   furniture:Array,
   airDirections: Array,
   extended: Array,
@@ -31,6 +31,6 @@ const userSchema = new mongoose.Schema({
   committee: Number,
   price: Number,
 });
-
+userSchema.pat
 const UserModel = mongoose.model("properties", userSchema);
 module.exports = UserModel;

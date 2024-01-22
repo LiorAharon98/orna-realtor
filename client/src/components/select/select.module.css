@@ -1,8 +1,13 @@
 #container {
   display: flex;
-  align-items: center;
-  width: 200px;
-  justify-content: space-between;
+  width: 250px;
+  background-color: white;
+}
+#error_container{
+  display: flex;
+  width: 250px;
+  border-bottom: 1.5px solid rgb(250, 32, 32);
+  border-radius: 5px;
   background-color: white;
 }
 #select_container {

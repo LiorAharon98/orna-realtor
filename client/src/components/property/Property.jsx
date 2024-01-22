@@ -5,7 +5,7 @@ const Property = (props) => {
   const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
-    navigate("/specific-property", { state: props });
+    navigate("/specific-property", { state:props});
   };
 
   const changePriceWithDot = () => {
