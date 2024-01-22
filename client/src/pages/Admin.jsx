@@ -4,20 +4,25 @@ import Property from "../components/property/Property";
 import styles from "../styles/admin.module.css";
 import Modal from "../components/modal/Modal";
 import { Animate } from "react-simple-animate";
+import { useDispatch } from "react-redux";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { propertyAction } from "../store/Index";
+import { useSelector } from "react-redux";
 const Admin = () => {
-  const [allProperty, setAllProperty] = useState([]);
+  const {allProperty} = useSelector((state) => state.property)
   const [toggleModal, setToggleModal] = useState(false);
+  const dispatch = useDispatch();
   const serverUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:4000/admin"
-      : "https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/admin";
+  process.env.NODE_ENV === "development"
+  ? "http://localhost:4000/admin"
+  : "https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/admin";
   const getProperty = async () => {
     setToggleModal(true);
     const response = await axios.get(serverUrl);
-    setAllProperty(response.data);
+    dispatch(propertyAction.getProperty(response.data))
     setToggleModal(false);
   };
+
   useEffect(() => {
     getProperty();
   }, []);
@@ -31,21 +36,21 @@ const Admin = () => {
           <AiOutlineLoading3Quarters id={styles.icon} />{" "}
         </Modal>
       )}
-      {allProperty.length>0 &&
-      <Animate play duration={2} start={{ opacity: 0 }} end={{ opacity: 1 }}>
-        <div id={styles.container}>
-          <div id={styles.tag_container}>
-            <p>איש קשר</p>
-            <p>רחוב</p>
-            <p>עיר</p>
-            <p>מחיר</p>
+      {allProperty.length > 0 && (
+        <Animate play duration={2} start={{ opacity: 0 }} end={{ opacity: 1 }}>
+          <div id={styles.container}>
+            <div id={styles.tag_container}>
+              <p>איש קשר</p>
+              <p>רחוב</p>
+              <p>עיר</p>
+              <p>מחיר</p>
+            </div>
+            {sortedProperty.map((property, index) => {
+              return <Property  key={index} {...property} />;
+            })}
           </div>
-          {sortedProperty.map((property, index) => {
-            return <Property key={index} {...property} />;
-          })}
-        </div>
-      </Animate>
-        }
+        </Animate>
+      )}
     </>
   );
 };

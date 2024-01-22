@@ -4,6 +4,14 @@
   justify-content: space-around;
   width: 230px;
 }
+#error_input {
+  align-items: center;
+  border: none;
+  border-bottom: 1.5px solid rgb(253, 0, 127);
+  font-size: 15px;
+  width: 100px;
+  outline: none;
+}
 #input {
   background-color: white;
   text-align: center;
@@ -11,7 +19,7 @@
   width: 100px;
   height: 25px;
   border: none;
-  border-bottom: 1px solid black;
   font-size: 15px;
+  border-bottom: 1px solid black;
 }
 

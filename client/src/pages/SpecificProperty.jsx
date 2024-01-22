@@ -11,7 +11,6 @@ const SpecificProperty = () => {
   const infoData = { ...state };
   delete infoData.__v;
   delete infoData._id;
-
   return (
     <>
       <AdminHeader id={id} state={state} />
@@ -46,13 +45,12 @@ const SpecificProperty = () => {
                         </div>
                       </div>
                     ) : (
-                        <div className={index == 24 ? styles.test : styles.extended_container}>
-                          <h4>{data[index]} : </h4>
-                          <div className={styles.test2}>
-
-                            <p>{!state[value] ? "ללא" : state[value] + " "}</p>
-                          </div>
+                      <div className={index == 24 ? styles.test : styles.extended_container}>
+                        <h4>{data[index]} : </h4>
+                        <div className={styles.test2}>
+                          <p>{!state[value] ? "ללא" : state[value] + " "}</p>
                         </div>
+                      </div>
                     )}
                   </>
                 )}
