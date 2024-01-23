@@ -20,7 +20,7 @@ const Select = ({ toggle, handleChange, hebrewName, name, maxNumber, room, check
   return (
     <>
       <div id={toggleError ? styles.error_container : styles.container}>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "center" , justifyContent : 'space-between' , width : 220 }}>
           <p id={styles.text}> {hebrewName} : </p>
           <select onChange={handleClick} id={styles.select_container}>
             <option></option>
@@ -35,9 +35,9 @@ const Select = ({ toggle, handleChange, hebrewName, name, maxNumber, room, check
               })}
           </select>
         </div>
-        <div style={{ display: "flex" }}>
+        <div id={styles.select_container_popup} >
           { toggleSize && checkBox === "parking" && <p> נפרדות \ עוקבות</p>}
-          { toggleSize && checkBox === "balcony" && <Input width={35} handleChange={() => {}} hebrewName={"גודל"} type={"number"} />}
+          { toggleSize && checkBox === "balcony" && <Input width={50} handleChange={() => {}} hebrewName={"גודל"} type={"number"} />}
         </div>
       </div>
     </>

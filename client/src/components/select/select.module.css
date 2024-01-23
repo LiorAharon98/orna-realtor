@@ -12,7 +12,7 @@
 }
 #select_container {
   background-color: white;
-  width: 85px;
+  width: 105px;
   height: 25px;
   font-size: 16px;
   outline: none;
@@ -20,3 +20,14 @@
   text-align: center;
 }
 
+#select_container_popup{
+display: flex;
+}
+@media screen and (max-width:768px) {
+  #error_container{
+    flex-direction: column;
+  }
+  #container{
+    flex-direction: column;
+  }
+}

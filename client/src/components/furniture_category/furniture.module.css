@@ -1,0 +1,10 @@
+#container_active {
+  width: 200px;
+  transition: 1000ms;
+}
+#container_inactive {
+    display: none;
+  transition: 1000ms;
+  width: 0px;
+  height: 0px;
+}

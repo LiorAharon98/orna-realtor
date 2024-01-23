@@ -21,7 +21,7 @@ const Categories = ({ name, handleChange, hebrewName, data }) => {
           {data.map((item, index) => {
             return <Category name={name} key={index} pressHandler={pressHandler} toggle={toggle} item={item} />;
           })}
-          {name === "furniture" && toggle === "חלקי" && <Furniture handleChange={handleChange} />}
+         <Furniture name ={"furniture"} toggle={toggle} handleChange={handleChange} />
         </div>
       </div>
     </div>
