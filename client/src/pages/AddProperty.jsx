@@ -109,15 +109,17 @@ const AddProperty = () => {
         </div>
 
         <div className={styles.input_container}>
-          <Input
-            toggle={toggle}
-            property={property}
-            name={"squareMeter"}
-            width={50}
-            handleChange={handleChange}
-            type={"number"}
-            hebrewName={`מ"ר`}
-          />
+          <div id={styles.square_meter_container}>
+            <Input
+              toggle={toggle}
+              property={property}
+              name={"squareMeter"}
+              width={50}
+              handleChange={handleChange}
+              type={"number"}
+              hebrewName={`מ"ר`}
+            />
+          </div>
           <Select
             toggle={toggle}
             property={property}

@@ -14,21 +14,22 @@
   color: rgb(5, 93, 255);
 }
 .item_inactive {
+  color : rgb(148, 148, 148);
   text-decoration: none;
   transition: 500ms;
   margin: 5px;
 }
-#extended_container{
+#extended_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-@media screen and (max-width:768px) {
-  #page_container{
+@media screen and (max-width: 768px) {
+  #page_container {
     flex-direction: column;
     width: 200px;
   }
-  #extended_container{
+  #extended_container {
     display: flex;
   }
 }
