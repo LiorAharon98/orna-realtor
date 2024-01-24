@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./modal.module.css";
-const Modal = ({ children,opacity }) => {
+import { useSelector } from "react-redux";
+const Modal = ({ children, opacity }) => {
+  const { toggleModal } = useSelector((state) => state.modal);
   return (
-    <div style={{opacity : opacity ? opacity : null}} id={styles.page_container}>
-      <div id={styles.container}>{children}</div>
-    </div>
+    <>
+      {toggleModal && (
+        <div style={{ opacity: opacity ? opacity : null }} id={styles.page_container}>
+          <div id={styles.container}>{children}</div>
+        </div>
+      )}
+    </>
   );
 };
 

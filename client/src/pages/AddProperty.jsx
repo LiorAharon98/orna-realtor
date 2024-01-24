@@ -7,15 +7,14 @@ import Categories from "../components/categories/Categories";
 import { airConditioner, airDirection, estateStatus, extended, furniture, sellOrRent, typeEstate } from "../data";
 import Extended from "../components/extended/Extended";
 import axios from "axios";
+import serverUrl from "../serverUrl";
 import { useState } from "react";
 import handleReverseDate from "../handleReverseDate";
 const AddProperty = () => {
+
   const [toggle, setToggle] = useState(false);
   const [property, setProperty] = useState({});
-  const serverUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:4000/add-property"
-      : "https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/add-property";
+  
   const navigate = useNavigate();
   const day = new Date().getDate();
   const month = `0${new Date().getMonth() + 1}`;
@@ -34,7 +33,7 @@ const AddProperty = () => {
   };
   const handleClick = async () => {
     if (Object.keys(property).length !== 30) return setToggle(true);
-    await axios.post(serverUrl, property);
+    await axios.post(serverUrl('add-property'), property);
     navigate("/");
   };
   const getAddressApi = async (streetName) => {

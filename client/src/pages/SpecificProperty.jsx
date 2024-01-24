@@ -32,9 +32,8 @@ const SpecificProperty = () => {
                   <>
                     {Array.isArray(Object.values(state)[index]) ? (
                       <div className={styles.test}>
-                        <h4>תוספות :</h4>
                         <div className={styles.test2}>
-                          {state[value].extendedValues && <h4>{value === "furniture" ? "ריהוט" : "תוספות"}</h4>}
+                        <h4>{value === "furniture" ? "ריהוט" : "תוספות"}</h4>
                           {state[value].map((extendedValues, currentIndex) => {
                             return (
                               <div key={currentIndex} className={styles.extended_container}>

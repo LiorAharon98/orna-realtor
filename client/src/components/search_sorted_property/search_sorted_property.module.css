@@ -1,0 +1,19 @@
+#container{
+    text-align: center;
+    margin: 10px;
+}
+#input{
+    border-radius: 15px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid rgb(216, 216, 216);
+    outline: none;
+    width: 250px;
+    height: 25px;
+    box-shadow: 1px 1px 8px 2px rgb(227, 227, 227);
+}
+@media screen and (max-width:768px) {
+    #input{
+        width: 200px;
+    }
+}
