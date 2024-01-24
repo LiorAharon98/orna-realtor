@@ -1,17 +1,17 @@
 #page_container_active {
+  background-color: rgb(255, 255, 255);
+  transition: 900ms;
   position: fixed;
-  top: 30px;
+  top: 35px;
   height: 100%;
   width: 100%;
-  background-color: rgb(255, 255, 255);
-  transition: 600ms;
 }
 #page_container_inactive {
   background-color: rgb(255, 255, 255);
   opacity: 0.3;
   position: fixed;
-  transition: 700ms;
-  width: 100%;
+  transition: 900ms;
+  width: 0%;
   height: 0%;
 }
 #link_container {
