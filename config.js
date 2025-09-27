@@ -4,5 +4,6 @@ const setServerConfiguration = (app) => {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   app.use(cors());
+  
 };
 module.exports = setServerConfiguration;
