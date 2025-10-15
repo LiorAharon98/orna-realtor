@@ -3,6 +3,9 @@ const propertyInitialState = { allProperty: [], sortedProperty: [] };
 const modalInitialState = {
   toggleModal: false,
 };
+const userInitialState = {
+  isLoggedIn: false,
+};
 const modalSlice = createSlice({
   name: "modal",
   initialState: modalInitialState,
@@ -12,6 +15,15 @@ const modalSlice = createSlice({
     },
     toggleOf(state) {
       state.toggleModal = false;
+    },
+  },
+});
+const userSlice = createSlice({
+  name: "user",
+  initialState: userInitialState,
+  reducers: {
+    logged(state) {
+      state.isLoggedIn = true;
     },
   },
 });
@@ -38,10 +50,12 @@ const store = configureStore({
   reducer: {
     property: propertySlice.reducer,
     modal: modalSlice.reducer,
+    user: userSlice.reducer,
   },
 });
 
 export const propertyAction = propertySlice.actions;
 export const modalAction = modalSlice.actions;
+export const userAction = userSlice.actions;
 
 export default store;
