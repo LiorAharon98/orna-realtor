@@ -25,7 +25,7 @@ const AddProperty = () => {
       return { ...prev, [key]: e.target.nodeName === "SELECT" ? Number(e.target.value) : e.target.value };
     });
     if (key === "available") {
-      if (handleReverseDate(e.target.value) == final)
+      if (handleReverseDate(e.target.value) === final)
         return setProperty((prev) => {
           return { ...prev, available: "מיידי" };
         });
@@ -36,20 +36,20 @@ const AddProperty = () => {
     await axios.post(serverUrl('add-property'), property);
     navigate("/");
   };
-  const getAddressApi = async (streetName) => {
-    const data = {
-      resource_id: "5c78e9fa-c2e2-4771-93ff-7f400a12f7ba",
-      limit: "5",
-      q: streetName,
-    };
-    const { resource_id, limit, q } = data;
-    const streetUrl = `https://data.gov.il/api/3/action/datastore_search?resource_id=${resource_id}&limit=${limit}&q=${q}`;
-    const neighborhoodUrl =
-      "https://www.nadlan.gov.il/Nadlan.REST/Main/GetNeighborhoodsListByCityAndStartsWith?cityName=אור יהודה&startWithKey=-1";
-    const url = new URL(data, neighborhoodUrl);
+  // const getAddressApi = async (streetName) => {
+  //   const data = {
+  //     resource_id: "5c78e9fa-c2e2-4771-93ff-7f400a12f7ba",
+  //     limit: "5",
+  //     q: streetName,
+  //   };
+  //   const { resource_id, limit, q } = data;
+  //   const streetUrl = `https://data.gov.il/api/3/action/datastore_search?resource_id=${resource_id}&limit=${limit}&q=${q}`;
+  //   const neighborhoodUrl =
+  //     "https://www.nadlan.gov.il/Nadlan.REST/Main/GetNeighborhoodsListByCityAndStartsWith?cityName=אור יהודה&startWithKey=-1";
+  //   const url = new URL(data, neighborhoodUrl);
 
-    const response = await axios.get(url);
-  };
+  //   const response = await axios.get(url);
+  // };
 
   return (
     <>

@@ -1,17 +1,25 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/home.module.css";
+import { userAction } from "../store/Index";
+import { useDispatch } from "react-redux";
 const Home = () => {
   const [toggle, setToggle] = useState(() => {
     const isLogged = JSON.parse(localStorage.getItem("orna"));
     return isLogged;
   });
+
   const usernameRef = useRef("");
   const passwordRef = useRef("");
+  const dispatch = useDispatch();
   const handleClick = (e) => {
     e.preventDefault();
     if (usernameRef.current.value === "orna" && passwordRef.current.value === "058434812") {
       setToggle(true);
-      window.localStorage.setItem("orna", JSON.stringify({ username: "orna", password: "058434812" }));
+      window.localStorage.setItem(
+        "orna",
+        JSON.stringify({ username: usernameRef.current.value, password: passwordRef.current.value })
+      );
+      dispatch(userAction.logged());
     }
   };
 
