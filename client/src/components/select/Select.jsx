@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./select.module.css";
-const Select = ({ name, maxNumber, room }) => {
+const Select = ({ handleChange,hebrewName,name, maxNumber, room }) => {
   const numbers = new Array(maxNumber).fill(1);
   const rooms = [];
   for (let i = 0; i < maxNumber; i++) {
@@ -9,8 +9,8 @@ const Select = ({ name, maxNumber, room }) => {
   }
   return (
     <div id={styles.container}>
-      <p id={styles.text}>{name} : </p>
-      <select  id={styles.select_container}>
+      <p id={styles.text}>{hebrewName} : </p>
+      <select onChange={handleChange.bind(this,name)}  id={styles.select_container}>
         <option>ללא</option>
         {!room &&
           numbers.map((number, index) => {
