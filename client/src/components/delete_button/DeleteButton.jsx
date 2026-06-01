@@ -7,32 +7,34 @@ import Modal from "../modal/Modal";
 import styles from "./delete_button.module.css";
 import { propertyAction } from "../../store/Index";
 import { useDispatch, useSelector } from "react-redux";
+import serverUrl from "../../serverUrl";
 const DeleteButton = ({ id }) => {
   const [toggleModal, setToggleModal] = useState(false);
-  const {allProperty} = useSelector(state =>state.property)
+  const { allProperty } = useSelector((state) => state.property);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleClick = async() => {
-    const afterFilter = allProperty.filter((value) => {
-      return value._id !== id;
-    });
-    dispatch(propertyAction.deleteProperty(afterFilter));
-    const serverUrl =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:4000/delete-property"
-        : "https://orna-realtor-node-js-03cea7a828a1.herokuapp.com/delete-property";
-    await axios.put(serverUrl, { id });
-    navigate("/admin");
+  const handleClick = async () => {
+    try {
+      const afterFilter = allProperty.filter((value) => {
+        return value._id !== id;
+      });
+      dispatch(propertyAction.deleteProperty(afterFilter));
+
+      await axios.put(serverUrl("delete-property"), { id });
+      navigate("/admin");
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <>
       <MdDelete onClick={setToggleModal.bind(this, true)} size={25} />
       {toggleModal && (
-        <Modal opacity={0.9}>
+        <Modal toggleModal opacity={0.9}>
           <AiOutlineClose id={styles.icon} onClick={setToggleModal.bind(this, false)} />
 
           <button id={styles.btn} onClick={handleClick}>
-            מחקי
+            מחק
           </button>
         </Modal>
       )}

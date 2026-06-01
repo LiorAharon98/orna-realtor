@@ -8,11 +8,16 @@
   font-size: 18px;
 }
 #btn {
-  width: 60%;
+  width: 120px;
   height: 35px;
   background-color: rgb(0, 94, 255);
   border-radius: 10px;
   border: none;
   color: white;
+}
+#modal_btn_container{
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
 }
 
