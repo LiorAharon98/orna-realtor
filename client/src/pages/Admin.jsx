@@ -17,7 +17,6 @@ const Admin = () => {
   const dispatch = useDispatch();
   const getProperty = async () => {
     dispatch(modalAction.toggleOn())
-    console.log(serverUrl('admin'))
     const response = await axios.get(serverUrl('admin'));
     dispatch(propertyAction.getProperty(response.data))
     dispatch(modalAction.toggleOf())
