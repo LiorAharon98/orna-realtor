@@ -1,7 +1,5 @@
 import styles from "./modal.module.css";
-import { useSelector } from "react-redux";
-const Modal = ({ children, opacity }) => {
-  const { toggleModal } = useSelector((state) => state.modal);
+const Modal = ({ children, opacity, toggleModal }) => {
   return (
     <>
       {toggleModal && (

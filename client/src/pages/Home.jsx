@@ -13,7 +13,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const handleClick = (e) => {
     e.preventDefault();
-    if (usernameRef.current.value === "orna" && passwordRef.current.value === "058434812") {
+    if (usernameRef.current.value === process.env.REACT_APP_USERNAME && passwordRef.current.value === process.env.REACT_APP_PASSWORD) {
       setToggle(true);
       window.localStorage.setItem(
         "orna",
@@ -28,8 +28,8 @@ const Home = () => {
       <div id={styles.right_container}>
         {!toggle && (
           <form id={styles.sign_container}>
-            <input className={styles.inp} ref={usernameRef} placeholder="username" />
-            <input className={styles.inp} ref={passwordRef} placeholder="password" />
+            <input className={styles.inp} ref={usernameRef} placeholder="Username" />
+            <input className={styles.inp} ref={passwordRef} placeholder="Password" />
             <button id={styles.btn} onClick={handleClick}>
               התחבר
             </button>
